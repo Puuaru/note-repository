@@ -3,7 +3,7 @@ plugins:
   - search
 extra:
   search:
-    language: 'cn'
+    language: 'zh'
 
 theme:
   name: 'material'
