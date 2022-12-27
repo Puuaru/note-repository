@@ -13,7 +13,7 @@
     
     
       
-        <title>vue 整合 tinymce - Puuaru's notes</title>
+        <title>manjaro的桌面启动问题 - Puuaru's notes</title>
       
     
     
@@ -66,7 +66,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#vue-tinymce" class="md-skip">
+        <a href="#manjaro" class="md-skip">
           跳转至
         </a>
       
@@ -99,7 +99,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              vue 整合 tinymce
+              manjaro的桌面启动问题
             
           </span>
         </div>
@@ -198,12 +198,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
       
       
       
@@ -224,11 +226,59 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../linux/manjaro%E7%9A%84%E6%A1%8C%E9%9D%A2%E5%90%AF%E5%8A%A8%E5%A4%B1%E8%B4%A5%E9%97%AE%E9%A2%98/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          manjaro的桌面启动问题
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         manjaro的桌面启动问题
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#u" class="md-nav__link">
+    安装时U盘系统中的桌面启动问题
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    安装后的桌面异常问题
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -246,14 +296,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
       
       
       
@@ -274,59 +322,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          vue 整合 tinymce
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../%E5%89%8D%E7%AB%AF/vue%E6%95%B4%E5%90%88%E5%AF%8C%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91%E5%99%A8tinymce/" class="md-nav__link">
         vue 整合 tinymce
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目录">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    快速安装
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#tinymce" class="md-nav__link">
-    封装 tinymce 为组件
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -446,15 +446,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    快速安装
+  <a href="#u" class="md-nav__link">
+    安装时U盘系统中的桌面启动问题
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#tinymce" class="md-nav__link">
-    封装 tinymce 为组件
+  <a href="#_1" class="md-nav__link">
+    安装后的桌面异常问题
   </a>
   
 </li>
@@ -474,26 +474,14 @@
                   
 
 
-<h1 id="vue-tinymce">vue 整合 tinymce<a class="headerlink" href="#vue-tinymce" title="Permanent link">&para;</a></h1>
-<h2 id="_1">快速安装<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code>npm install @tinymce/tinymce-vue@3.2.8 -S   // vue2 中不能使用 @tinymce/tinymce-vue 为4以上的版本
-npm install tinymce@5.10.3 -S
-</code></pre></div>
-<p>上述安装后，编辑器默认是英文，因此若有需要可以下载<a href="https://www.tiny.cloud/get-tiny/language-packages/">中文汉化包</a></p>
-<p><img alt="image-20221209150959914" src="../_assets/vue%E6%95%B4%E5%90%88%E5%AF%8C%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91%E5%99%A8tinymce/image-20221209150959914.png" /></p>
-<p>之后在 vue 项目的 static 或 public 目录下创建 tinymce 目录，该目录用以存放主题、语言包以及后面可能需要使用到的自定义插件。将 node_modules/tinymce 目录下的 <code>skin</code> 、<code>plugin</code> 文件夹 复制到 public/tinymce 中，并可在 public/tinymce 目录下创建 langs 目录用以安装语言包。</p>
-<blockquote>
-<p>当然，你也可以直接选择其他已经打包好的 tinymce 置于 public 目录，比如使用 vue-element-admin 打包好的 tinymce，这类情况下需要将 @tinymce/tinymce-vue 中的 min.js 文件也一并复制到 public/tinymce 目录下，而不需要在 package.json 文件中写入 tinymce 的依赖</p>
-<p>之后在 public/index.html 文件中引入 tinymce：</p>
-</blockquote>
-<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
-  <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
-    ...
-    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;&lt;%= BASE_URL %&gt;tinymce4.7.5/tinymce.min.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;&lt;%= BASE_URL %&gt;tinymce4.7.5/langs/zh_CN.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
-  <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
-</code></pre></div>
-<h2 id="tinymce">封装 tinymce 为组件<a class="headerlink" href="#tinymce" title="Permanent link">&para;</a></h2>
+<h1 id="manjaro">manjaro的桌面启动问题<a class="headerlink" href="#manjaro" title="Permanent link">&para;</a></h1>
+<p>由于装机配置使用的13代i5，写下文章时 manjaro 官网中提供的安装镜像存在一定的兼容性问题，会使安装的 manjoro 系统出现桌面启动问题。</p>
+<p>这里记录下当时的解决思路。</p>
+<h2 id="u">安装时U盘系统中的桌面启动问题<a class="headerlink" href="#u" title="Permanent link">&para;</a></h2>
+<p>此时可以通过 alt + 2 进入 tty，使用 less 查看位于 <code>/var/log</code> 的 <code>Xorg.0.log</code> 从而确认各种设备的启动信息。</p>
+<p>然而当时的情况是该路径下并未发现 xorg 的 log 文件，也就是说极有可能连 xorg 都没能跑起来，故使用 <code>sudo pacman-mirrors -c China</code> 更换国内源之后更新一遍系统，再自行安装 xorg，在 xorg 安装后可以在 <code>/var/log</code> 中找到 <code>Xorg.0.log</code> 文件，此时便可通过该文件确认设备的启动信息，之后对着 ERR 进行驱动安装和修复即可。</p>
+<h2 id="_1">安装后的桌面异常问题<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>安装完 manjaro 并进行升级后遇到了如下桌面异常问题：所有操作的结果都必须在窗口切换时才能回显，在进入 tty 排查后发现应该不是设备驱动等问题，因此考虑换 linux 内核到支持13代cpu的 5.19 版本</p>
 
 
 
@@ -514,7 +502,7 @@ npm install tinymce@5.10.3 -S
     <nav class="md-footer__inner md-grid" aria-label="页脚" >
       
         
-        <a href="../../linux/manjaro%E7%9A%84%E6%A1%8C%E9%9D%A2%E5%90%AF%E5%8A%A8%E5%A4%B1%E8%B4%A5%E9%97%AE%E9%A2%98/" class="md-footer__link md-footer__link--prev" aria-label="上一页: manjaro的桌面启动问题" rel="prev">
+        <a href="../.." class="md-footer__link md-footer__link--prev" aria-label="上一页: Puuaru&#39;s note repository" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -523,20 +511,20 @@ npm install tinymce@5.10.3 -S
               <span class="md-footer__direction">
                 上一页
               </span>
-              manjaro的桌面启动问题
+              Puuaru's note repository
             </div>
           </div>
         </a>
       
       
         
-        <a href="../../%E8%A3%85%E6%9C%BA/%E7%B3%BB%E7%BB%9F/%E5%88%B6%E4%BD%9C%E5%8F%AF%E5%90%AF%E5%8A%A8U%E7%9B%98/" class="md-footer__link md-footer__link--next" aria-label="下一页: 制作可启动U盘" rel="next">
+        <a href="../../%E5%89%8D%E7%AB%AF/vue%E6%95%B4%E5%90%88%E5%AF%8C%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91%E5%99%A8tinymce/" class="md-footer__link md-footer__link--next" aria-label="下一页: vue 整合 tinymce" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 下一页
               </span>
-              制作可启动U盘
+              vue 整合 tinymce
             </div>
           </div>
           <div class="md-footer__button md-icon">
