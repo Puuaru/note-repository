@@ -13,7 +13,7 @@
     
     
       
-        <title>雪花算法的精度问题 - Puuaru's notes</title>
+        <title>客户端数据维持的方式 - Puuaru's notes</title>
       
     
     
@@ -99,7 +99,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              雪花算法的精度问题
+              客户端数据维持的方式
             
           </span>
         </div>
@@ -322,11 +322,99 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../%E5%AE%A2%E6%88%B7%E7%AB%AF%E6%95%B0%E6%8D%AE%E7%BB%B4%E6%8C%81%E7%9A%84%E6%96%B9%E5%BC%8F/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          客户端数据维持的方式
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         客户端数据维持的方式
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#cookie" class="md-nav__link">
+    Cookie
+  </a>
+  
+    <nav class="md-nav" aria-label="Cookie">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cookie-domain" class="md-nav__link">
+    Cookie 的域名 Domain
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cookie-redis-sso" class="md-nav__link">
+    Cookie + Redis 作为 SSO 单点登录方案
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#session" class="md-nav__link">
+    Session 方式
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#token" class="md-nav__link">
+    token方式
+  </a>
+  
+    <nav class="md-nav" aria-label="token方式">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#jwt-json-web-token" class="md-nav__link">
+    jwt （Json web token）
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -350,72 +438,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          雪花算法的精度问题
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../%E9%9B%AA%E8%8A%B1%E7%AE%97%E6%B3%95%E7%9A%84%E7%B2%BE%E5%BA%A6%E9%97%AE%E9%A2%98/" class="md-nav__link">
         雪花算法的精度问题
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目录">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    解决方案
-  </a>
-  
-    <nav class="md-nav" aria-label="解决方案">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-id" class="md-nav__link">
-    1. 针对使用雪花算法的 id 字段设置类型转换
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2" class="md-nav__link">
-    2. 全局类型转换
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -616,23 +643,50 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    解决方案
+  <a href="#cookie" class="md-nav__link">
+    Cookie
   </a>
   
-    <nav class="md-nav" aria-label="解决方案">
+    <nav class="md-nav" aria-label="Cookie">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-id" class="md-nav__link">
-    1. 针对使用雪花算法的 id 字段设置类型转换
+  <a href="#cookie-domain" class="md-nav__link">
+    Cookie 的域名 Domain
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#2" class="md-nav__link">
-    2. 全局类型转换
+  <a href="#cookie-redis-sso" class="md-nav__link">
+    Cookie + Redis 作为 SSO 单点登录方案
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#session" class="md-nav__link">
+    Session 方式
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#token" class="md-nav__link">
+    token方式
+  </a>
+  
+    <nav class="md-nav" aria-label="token方式">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#jwt-json-web-token" class="md-nav__link">
+    jwt （Json web token）
   </a>
   
 </li>
@@ -657,42 +711,52 @@
                   
 
 
-<h1 id="_1">雪花算法的精度问题<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
-<p>在使用雪花算法作为数据的 id 时，由于雪花算法的较长位数，id在被序列化时会出现如下每个 id 在最后两位的数字均丢失的精度问题：</p>
-<div class="highlight"><pre><span></span><code><span class="nt">&quot;items&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
-<span class="w">      </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1389172225111048200</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Collection&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="nt">&quot;children&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
-<span class="w">          </span><span class="p">{</span><span class="w"></span>
-<span class="w">            </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1389172441935593500</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="nt">&quot;children&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w"></span>
-<span class="w">          </span><span class="p">},</span><span class="w"></span>
-</code></pre></div>
-<p>其原因在于 javascript 不支持后台返回的 Long 类型，且 javascript 的number 类型数值范围是 -2^53 ~ 2^53 , 小于雪花算法生成的 id 的数值，因此在进制转换时会出现精度问题使得 javascript 无法正常存储</p>
-<h2 id="_2">解决方案<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<p>此情况一般上讲可以有两种解决方案，但归根到底都是将使用雪花算法的字段从 Long 类型转换为 String 类型。</p>
-<p>这里使用 jackson 来解决问题，你也可以使用其他库。</p>
-<h3 id="1-id">1. 针对使用雪花算法的 id 字段设置类型转换<a class="headerlink" href="#1-id" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">ChapterVO</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="nd">@JsonSerialize</span><span class="p">(</span><span class="n">using</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ToStringSerializer</span><span class="p">.</span><span class="na">class</span><span class="p">)</span><span class="w"></span>
-<span class="w">    </span><span class="n">Long</span><span class="w"> </span><span class="n">id</span><span class="p">;</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
-</code></pre></div>
-<h3 id="2">2. 全局类型转换<a class="headerlink" href="#2" title="Permanent link">&para;</a></h3>
-<p>编写一个 json 配置类，将 Long 类型序列化成 json 时自动转换为 String 类型</p>
-<div class="highlight"><pre><span></span><code><span class="nd">@Configuration</span><span class="w"></span>
-<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">JacksonConfiguration</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="nd">@Bean</span><span class="w"></span>
-<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">Jackson2ObjectMapperBuilderCustomizer</span><span class="w"> </span><span class="nf">jackson2ObjectMapperBuilderCustomizer</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">builder</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">            </span><span class="c1">// 指定 Long 类型转换为 String 类型</span><span class="w"></span>
-<span class="w">            </span><span class="n">builder</span><span class="p">.</span><span class="na">serializerByType</span><span class="p">(</span><span class="n">Long</span><span class="p">.</span><span class="na">class</span><span class="p">,</span><span class="w"> </span><span class="n">ToStringSerializer</span><span class="p">.</span><span class="na">instance</span><span class="p">);</span><span class="w"></span>
-<span class="w">        </span><span class="p">}</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
-</code></pre></div>
+<h1 id="_1">客户端数据维持的方式<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<p>在进行后端编程时，一个绕不开的问题就是如何维持用户客户端的数据（最常见的数据便是登录数据）。</p>
+<p>当前的客户端数据维持方式大抵分为：Cookie、Session、Token（以及基于 Token 方式发展的 Jwt 方式）。</p>
+<h2 id="cookie">Cookie<a class="headerlink" href="#cookie" title="Permanent link">&para;</a></h2>
+<p>Cookie 是服务器发送倒用户浏览器并保存在本地的一小块数据，浏览器保存 Cookie 之后再向服务器发送请求时便会一并携带上 Cookie，从而用于告知服务器该请求来自之前发送 Cookie 给的同一客户端，让无状态的 HTTP 得以保持包括用户的登入状态等的状态信息。</p>
+<blockquote>
+<p>Cookie 曾一度用于客户端数据的唯一存储，因为当时并没有其他合适的存储方法，所以 Cookie 是唯一的存储手段。然而随着更新的存储手段出现，Cookie 仍未被抛弃，因为 Cookie 的客户端发送性质可以降低服务器端的压力，用来存储一些相对不那么重要的信息，如用户习惯。</p>
+</blockquote>
+<p>值得注意的是， Cookie 存在安全性问题，因为其浏览器自动发送的特性使其可以很方便地被获取，所以为避免遭受 CRSF 攻击导致 Cookie 盗用等情况，现今已很少使用 Cookie 进行登录验证。</p>
+<p>Cookie 的大致结构包含：名称、内容、域名、路径、发送原因、脚本可访问性、创建时间、到期时间。</p>
+<p>这里需要说明下 Cookie 的域名。</p>
+<h3 id="cookie-domain">Cookie 的域名 Domain<a class="headerlink" href="#cookie-domain" title="Permanent link">&para;</a></h3>
+<p>Cookie 的域名也被称作作用域，是带来跨域问题使得 Cookie 不符合现代网络应用需要的原因之一。</p>
+<blockquote>
+<p>Path 标识的是指定主机下的哪些路径可以接受 Cookie</p>
+</blockquote>
+<p>Domain 标识为保证安全，指定了哪些主机可以接受 Cookie。若 Cookie 中不指定 Domain，则默认值为当前文档的主机（不包括主机下的子域名，如当 Domain 的值为 <code>demo.com</code> 时，Cookie 依然无法被 <code>demo.service1.com</code> 获取）；若指定了 Domain ，则一般也能包含子域名，如有两个域 <code>domain1.test.com</code> 和 <code>domain2.test.com</code> ，此时指定 Domain 值为 <code>.test.com</code>，则 cookie 可同时访问到两个域。</p>
+<p>综上，一些大网站上使用 Cookie 的场景中常见如下 Cookies :</p>
+<p><img alt="image-20230126160930782" src="/home/puuaru/repositories/note-repository/docs/后端/_assets/客户端数据维持的方式/image-20230126160930782.png" /></p>
+<p>上图中，Cookie 的域为网站的一二级域名，这使得 Cookie 可以被不同的三级域共享，如：</p>
+<p><img alt="image-20230126161106395" src="/home/puuaru/repositories/note-repository/docs/后端/_assets/客户端数据维持的方式/image-20230126161106395.png" /></p>
+<p>而对于三级域独享的 Cookies，其域值则为：</p>
+<p><img alt="image-20230126161149554" src="/home/puuaru/repositories/note-repository/docs/后端/_assets/客户端数据维持的方式/image-20230126161149554.png" /></p>
+<h3 id="cookie-redis-sso">Cookie + Redis 作为 SSO 单点登录方案<a class="headerlink" href="#cookie-redis-sso" title="Permanent link">&para;</a></h3>
+<p>当应用包含多个服务时便需要做单点登录，而其中一种常用的方式便是 Cookie + Redis 的 SSO 方式，这个方式当然也可以用 jwt 等进行登录，然后使用 Cookie + Redis 来维持状态从而减少服务端的计算量，但相比单纯的 jwt 当然会存在安全风险。</p>
+<p>此方式中一般需要设立一个登录服务，并在登录后生成一个随机值作为用户数据在 redis 中存储的 key 值，而将用户数据存入 value，同时颁发指定了方便拓展的域值的 Cookie，在其中存储方才 redis 的用户 key 值。</p>
+<p>此时所有服务均可在获取 Cookie 后提取 key 值，到 redis 根据 key 值进行查询，若查询到数据则为登录模式。</p>
+<p>需要注意的是一般这种情况下应为 Cookie 设置过期时间，否则一旦遭遇 CRSF 等攻击导致 Cookie 泄漏就会导致安全问题，如 BDUSS。</p>
+<h2 id="session">Session 方式<a class="headerlink" href="#session" title="Permanent link">&para;</a></h2>
+<p>除了可以将用户信息通过 Cookie 存储在用户浏览器中，也可以利用 Session 将信息存储在服务端，由此便为早期的 Cookie + Session 用户状态维持方案：</p>
+<ol>
+<li>用户登录</li>
+<li>服务器验证用户名和密码，正确则将信息放入 Session，信息的 key 值记为 Session ID</li>
+<li>在服务器响应报文中的首部字段 Set-Cookie 中包含此 Session ID，使得客户端收到响应报文后将该 Cookie 存入浏览器中</li>
+<li>之后用户访问服务端时便会携带该 Cookie，服务端在收到请求后根据 Cookie 中的 Session ID 去用存储在 Session 中的信息进行操作</li>
+</ol>
+<p>可以看到，Session 方式本质上和 Redis 并无太大差别，但是 Session 存在跨域问题：多个服务端不会共享同一个 Session，因此若要使用此方式进行现代网页应用程序的用户信息维持方案，必须进行 Session 广播，也即将 Session 复制到所有服务中去。很明显地，这会带来额外的开销。</p>
+<p>因此 Session 方式可以说被时代淘汰了。</p>
+<h2 id="token">token方式<a class="headerlink" href="#token" title="Permanent link">&para;</a></h2>
+<p>token 是一个存储着用户登录信息的字符串，具有天生防止 CRSF 攻击的特性，后端收到请求后对用户登录信息进行加密，并生成一个 token 将信息保存至其中后交给前端，同时在数据库中保存该 token，前端再将 token 转发给浏览器，由浏览器保存 token。</p>
+<p>转发 token 时应将其放在响应头中，使用浏览器的 local storage 进行存储，再次访问时再由客户端将其取出使用（如根据 token 动态生成页面，或将其转发给后端），从而使得攻击者无法通过 CRSF 来获取用户的状态信息或登录凭证。</p>
+<p>而当后端收到 token 后会查询数据库验证 token 是否有效，这使得此方式具有中心化特性，需依赖内存或 redis 存储，且在分布式系统中需要 redis 查询和接口调用从而增加系统复杂性。</p>
+<h3 id="jwt-json-web-token">jwt （Json web token）<a class="headerlink" href="#jwt-json-web-token" title="Permanent link">&para;</a></h3>
+<p>Jwt 方式本质上也是一种 token 方式，只是为避免额外的数据库查询开销，为 token 多加一个 payload （载荷），将用户数据存入 payload 并对整个 token 进行签名和加密；由此，服务端只需对 token 的签名进行解密校验即可使用存入其中的用户信息进行后续的业务，从而省略了数据库的查询。</p>
+<p>这种方式会导致请求头复杂度的增加、服务端无法自行删除 token 以及可能的密钥泄露风险；但是其无需查询数据库的特性使得其针对分布式应用时具有去中心化的特性，增加应用性能，以及为第三方业务服务拓展时（如最常见的 OAuth），业务服务只需使用公钥验证 jwt 的真实性便可使用其中提供的内容。</p>
+<p>因此，也有一部分公司并不单独使用 jwt 作为访问凭证，而是将其作为可靠的发布信息使用，而自身进行访问认证时则单独设置额外的方式。</p>
 
 
 
@@ -713,7 +777,7 @@
     <nav class="md-footer__inner md-grid" aria-label="页脚" >
       
         
-        <a href="../%E7%BB%9F%E4%B8%80%E8%BF%94%E5%9B%9E/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 后端统一接口返回" rel="prev">
+        <a href="../../%E5%89%8D%E7%AB%AF/vue%E6%95%B4%E5%90%88%E5%AF%8C%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91%E5%99%A8tinymce/" class="md-footer__link md-footer__link--prev" aria-label="上一页: vue 整合 tinymce" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -722,20 +786,20 @@
               <span class="md-footer__direction">
                 上一页
               </span>
-              后端统一接口返回
+              vue 整合 tinymce
             </div>
           </div>
         </a>
       
       
         
-        <a href="../../%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/java/%E5%88%97%E8%A1%A8%E6%8E%92%E5%BA%8F/" class="md-footer__link md-footer__link--next" aria-label="下一页: 列表排序方式" rel="next">
+        <a href="../%E7%BB%9F%E4%B8%80%E8%BF%94%E5%9B%9E/" class="md-footer__link md-footer__link--next" aria-label="下一页: 后端统一接口返回" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 下一页
               </span>
-              列表排序方式
+              后端统一接口返回
             </div>
           </div>
           <div class="md-footer__button md-icon">
