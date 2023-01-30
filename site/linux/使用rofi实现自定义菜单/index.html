@@ -13,7 +13,7 @@
     
     
       
-        <title>vue 整合 tinymce - Puuaru's notes</title>
+        <title>使用 rofi 实现自定义菜单 - Puuaru's notes</title>
       
     
     
@@ -66,7 +66,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#vue-tinymce" class="md-skip">
+        <a href="#rofi" class="md-skip">
           跳转至
         </a>
       
@@ -99,7 +99,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              vue 整合 tinymce
+              使用 rofi 实现自定义菜单
             
           </span>
         </div>
@@ -198,12 +198,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
       
       
       
@@ -226,7 +228,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../linux/manjaro%E7%9A%84%E6%A1%8C%E9%9D%A2%E5%90%AF%E5%8A%A8%E5%A4%B1%E8%B4%A5%E9%97%AE%E9%A2%98/" class="md-nav__link">
+      <a href="../manjaro%E7%9A%84%E6%A1%8C%E9%9D%A2%E5%90%AF%E5%8A%A8%E5%A4%B1%E8%B4%A5%E9%97%AE%E9%A2%98/" class="md-nav__link">
         manjaro的桌面启动问题
       </a>
     </li>
@@ -238,11 +240,79 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../linux/%E4%BD%BF%E7%94%A8rofi%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%AE%9A%E4%B9%89%E8%8F%9C%E5%8D%95/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          使用 rofi 实现自定义菜单
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         使用 rofi 实现自定义菜单
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#rofi_1" class="md-nav__link">
+    rofi
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    原理
+  </a>
+  
+    <nav class="md-nav" aria-label="原理">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    选项显示
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dmenu" class="md-nav__link">
+    dmenu 模式
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -260,14 +330,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
       
       
       
@@ -288,59 +356,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          vue 整合 tinymce
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../%E5%89%8D%E7%AB%AF/vue%E6%95%B4%E5%90%88%E5%AF%8C%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91%E5%99%A8tinymce/" class="md-nav__link">
         vue 整合 tinymce
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目录">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    快速安装
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#tinymce" class="md-nav__link">
-    封装 tinymce 为组件
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -617,16 +637,36 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    快速安装
+  <a href="#rofi_1" class="md-nav__link">
+    rofi
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#tinymce" class="md-nav__link">
-    封装 tinymce 为组件
+  <a href="#_1" class="md-nav__link">
+    原理
   </a>
+  
+    <nav class="md-nav" aria-label="原理">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    选项显示
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dmenu" class="md-nav__link">
+    dmenu 模式
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -645,26 +685,30 @@
                   
 
 
-<h1 id="vue-tinymce">vue 整合 tinymce<a class="headerlink" href="#vue-tinymce" title="Permanent link">&para;</a></h1>
-<h2 id="_1">快速安装<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code>npm install @tinymce/tinymce-vue@3.2.8 -S   // vue2 中不能使用 @tinymce/tinymce-vue 为4以上的版本
-npm install tinymce@5.10.3 -S
+<h1 id="rofi">使用 rofi 实现自定义菜单<a class="headerlink" href="#rofi" title="Permanent link">&para;</a></h1>
+<h2 id="rofi_1">rofi<a class="headerlink" href="#rofi_1" title="Permanent link">&para;</a></h2>
+<p><a href="https://github.com/davatorium/rofi">rofi</a> 是一款可以用于替代 dmenu 的程序启动器和窗口切换器，
+同时其在 dmenu 模式下对脚本的支持也使它成为自定义菜单的良好选择</p>
+<h2 id="_1">原理<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>rofi 在 <code>-modi</code> 模式下会将脚本中的输出按照分行作为自己的菜单选项，
+而在 <code>-dmenu</code> 模式下则会将管道输出作为自己的菜单选项，
+同时，当脚本后续仍有对 rofi 的调用时，前一次调用中选中的选项都会作为这次调用的入参</p>
+<h3 id="_2">选项显示<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<p>编辑一个脚本 <code>test.sh</code> 填入如下内容并为其添加执行权限：</p>
+<div class="highlight"><pre><span></span><code><span class="nb">echo</span> -e <span class="s2">&quot;option1\noption2\noption3&quot;</span>
+
+<span class="k">case</span> <span class="nv">$*</span> <span class="k">in</span>
+  <span class="s2">&quot;option1&quot;</span><span class="o">)</span>
+    notify-send <span class="s2">&quot;select option1&quot;</span>
+    <span class="p">;;</span>
+<span class="k">esac</span>
 </code></pre></div>
-<p>上述安装后，编辑器默认是英文，因此若有需要可以下载<a href="https://www.tiny.cloud/get-tiny/language-packages/">中文汉化包</a></p>
-<p><img alt="image-20221209150959914" src="../_assets/vue%E6%95%B4%E5%90%88%E5%AF%8C%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91%E5%99%A8tinymce/image-20221209150959914.png" /></p>
-<p>之后在 vue 项目的 static 或 public 目录下创建 tinymce 目录，该目录用以存放主题、语言包以及后面可能需要使用到的自定义插件。将 node_modules/tinymce 目录下的 <code>skin</code> 、<code>plugin</code> 文件夹 复制到 public/tinymce 中，并可在 public/tinymce 目录下创建 langs 目录用以安装语言包。</p>
-<blockquote>
-<p>当然，你也可以直接选择其他已经打包好的 tinymce 置于 public 目录，比如使用 vue-element-admin 打包好的 tinymce，这类情况下需要将 @tinymce/tinymce-vue 中的 min.js 文件也一并复制到 public/tinymce 目录下，而不需要在 package.json 文件中写入 tinymce 的依赖</p>
-<p>之后在 public/index.html 文件中引入 tinymce：</p>
-</blockquote>
-<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
-  <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
-    ...
-    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;&lt;%= BASE_URL %&gt;tinymce4.7.5/tinymce.min.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;&lt;%= BASE_URL %&gt;tinymce4.7.5/langs/zh_CN.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
-  <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<p>之后执行命令 <code>rofi -show test -modi "test:./test.sh"</code>，
+选中 <code>option1</code>，<code>option1</code> 便会成为下一个入参被 <code>case $*</code> 捕捉到，从而执行 <code>case</code> 语句中的内容</p>
+<h3 id="dmenu">dmenu 模式<a class="headerlink" href="#dmenu" title="Permanent link">&para;</a></h3>
+<p>dmenu 模式下，rofi 会将管道的输出作为自己的输入，以此进行选项显示：</p>
+<div class="highlight"><pre><span></span><code><span class="nv">selection</span><span class="o">=(</span><span class="k">$(</span>bluetoothctl devices <span class="p">|</span> awk <span class="s1">&#39;{print $2,$3}&#39;</span> <span class="p">|</span> rofi -i -p <span class="s1">&#39;Connect:&#39;</span> -dmenu<span class="k">)</span><span class="o">)</span>
 </code></pre></div>
-<h2 id="tinymce">封装 tinymce 为组件<a class="headerlink" href="#tinymce" title="Permanent link">&para;</a></h2>
 
 
 
@@ -685,7 +729,7 @@ npm install tinymce@5.10.3 -S
     <nav class="md-footer__inner md-grid" aria-label="页脚" >
       
         
-        <a href="../../linux/%E4%BD%BF%E7%94%A8rofi%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%AE%9A%E4%B9%89%E8%8F%9C%E5%8D%95/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 使用 rofi 实现自定义菜单" rel="prev">
+        <a href="../manjaro%E7%9A%84%E6%A1%8C%E9%9D%A2%E5%90%AF%E5%8A%A8%E5%A4%B1%E8%B4%A5%E9%97%AE%E9%A2%98/" class="md-footer__link md-footer__link--prev" aria-label="上一页: manjaro的桌面启动问题" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -694,20 +738,20 @@ npm install tinymce@5.10.3 -S
               <span class="md-footer__direction">
                 上一页
               </span>
-              使用 rofi 实现自定义菜单
+              manjaro的桌面启动问题
             </div>
           </div>
         </a>
       
       
         
-        <a href="../../%E5%90%8E%E7%AB%AF/%E5%AE%A2%E6%88%B7%E7%AB%AF%E6%95%B0%E6%8D%AE%E7%BB%B4%E6%8C%81%E7%9A%84%E6%96%B9%E5%BC%8F/" class="md-footer__link md-footer__link--next" aria-label="下一页: 客户端数据维持的方式" rel="next">
+        <a href="../../%E5%89%8D%E7%AB%AF/vue%E6%95%B4%E5%90%88%E5%AF%8C%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91%E5%99%A8tinymce/" class="md-footer__link md-footer__link--next" aria-label="下一页: vue 整合 tinymce" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 下一页
               </span>
-              客户端数据维持的方式
+              vue 整合 tinymce
             </div>
           </div>
           <div class="md-footer__button md-icon">
