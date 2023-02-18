@@ -745,11 +745,11 @@
 </blockquote>
 <p>Domain 标识为保证安全，指定了哪些主机可以接受 Cookie。若 Cookie 中不指定 Domain，则默认值为当前文档的主机（不包括主机下的子域名，如当 Domain 的值为 <code>demo.com</code> 时，Cookie 依然无法被 <code>demo.service1.com</code> 获取）；若指定了 Domain ，则一般也能包含子域名，如有两个域 <code>domain1.test.com</code> 和 <code>domain2.test.com</code> ，此时指定 Domain 值为 <code>.test.com</code>，则 cookie 可同时访问到两个域。</p>
 <p>综上，一些大网站上使用 Cookie 的场景中常见如下 Cookies :</p>
-<p><img alt="image-20230126160930782" src="/home/puuaru/repositories/note-repository/docs/后端/_assets/客户端数据维持的方式/image-20230126160930782.png" /></p>
+<p><img alt="image-20230126160930782" src="../_assets/%E5%AE%A2%E6%88%B7%E7%AB%AF%E6%95%B0%E6%8D%AE%E7%BB%B4%E6%8C%81%E7%9A%84%E6%96%B9%E5%BC%8F/image-20230126160930782.png" /></p>
 <p>上图中，Cookie 的域为网站的一二级域名，这使得 Cookie 可以被不同的三级域共享，如：</p>
-<p><img alt="image-20230126161106395" src="/home/puuaru/repositories/note-repository/docs/后端/_assets/客户端数据维持的方式/image-20230126161106395.png" /></p>
+<p><img alt="image-20230126161106395" src="../_assets/%E5%AE%A2%E6%88%B7%E7%AB%AF%E6%95%B0%E6%8D%AE%E7%BB%B4%E6%8C%81%E7%9A%84%E6%96%B9%E5%BC%8F/image-20230126161106395.png" /></p>
 <p>而对于三级域独享的 Cookies，其域值则为：</p>
-<p><img alt="image-20230126161149554" src="/home/puuaru/repositories/note-repository/docs/后端/_assets/客户端数据维持的方式/image-20230126161149554.png" /></p>
+<p><img alt="image-20230126161149554" src="../_assets/%E5%AE%A2%E6%88%B7%E7%AB%AF%E6%95%B0%E6%8D%AE%E7%BB%B4%E6%8C%81%E7%9A%84%E6%96%B9%E5%BC%8F/image-20230126161149554.png" /></p>
 <h3 id="cookie-redis-sso">Cookie + Redis 作为 SSO 单点登录方案<a class="headerlink" href="#cookie-redis-sso" title="Permanent link">&para;</a></h3>
 <p>当应用包含多个服务时便需要做单点登录，而其中一种常用的方式便是 Cookie + Redis 的 SSO 方式，这个方式当然也可以用 jwt 等进行登录，然后使用 Cookie + Redis 来维持状态从而减少服务端的计算量，但相比单纯的 jwt 当然会存在安全风险。</p>
 <p>此方式中一般需要设立一个登录服务，并在登录后生成一个随机值作为用户数据在 redis 中存储的 key 值，而将用户数据存入 value，同时颁发指定了方便拓展的域值的 Cookie，在其中存储方才 redis 的用户 key 值。</p>
