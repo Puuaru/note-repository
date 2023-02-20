@@ -828,7 +828,7 @@
 <span class="w">  </span><span class="p">}</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
-<p><img alt="运行结果" src="img/image_2023-02-20-13-38-36.png" /></p>
+<p><img alt="运行结果" src="../img/image_2023-02-20-13-38-36.png" /></p>
 <h3 id="keyset">KeySet<a class="headerlink" href="#keyset" title="Permanent link">&para;</a></h3>
 <p>KeySet 用以遍历 Key 内容，此时通过 <code>map.get(key)</code> 来获取 Value 值。
 相较 EntrySet，KeySet 的性能由于其本质是遍历两次 map 而更低</p>
@@ -845,7 +845,7 @@
 <span class="w">  </span><span class="p">}</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
-<p><img alt="运行结果" src="img/image_2023-02-20-13-43-11.png" /></p>
+<p><img alt="运行结果" src="../img/image_2023-02-20-13-43-11.png" /></p>
 <h3 id="keyset_1">KeySet 迭代器<a class="headerlink" href="#keyset_1" title="Permanent link">&para;</a></h3>
 <p>还有一种方式是获取 KeySet 的迭代器用以遍历：</p>
 <div class="highlight"><pre><span></span><code><span class="w">    </span><span class="n">Iterator</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">iterator</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">map</span><span class="p">.</span><span class="na">keySet</span><span class="p">().</span><span class="na">iterator</span><span class="p">();</span><span class="w"></span>
@@ -854,7 +854,7 @@
 <span class="w">      </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">key</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot; iterator value: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">map</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">key</span><span class="p">));</span><span class="w"></span>
 <span class="w">    </span><span class="p">}</span><span class="w"></span>
 </code></pre></div>
-<p><img alt="image_2023-02-20-13-48-22" src="img/image_2023-02-20-13-48-22.png" /></p>
+<p><img alt="image_2023-02-20-13-48-22" src="../img/image_2023-02-20-13-48-22.png" /></p>
 <p>迭代器的作用是用来动态操作当前 map（如增加或删除），java 禁止非迭代器的遍历修改操作</p>
 <div class="highlight"><pre><span></span><code><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">Map</span><span class="p">.</span><span class="na">Entry</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">entry</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">map</span><span class="p">.</span><span class="na">entrySet</span><span class="p">())</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;MySql&quot;</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="n">entry</span><span class="p">.</span><span class="na">getKey</span><span class="p">()))</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
@@ -864,7 +864,7 @@
 <span class="w">      </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">entry</span><span class="p">.</span><span class="na">getKey</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;,&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">entry</span><span class="p">.</span><span class="na">getValue</span><span class="p">());</span><span class="w"></span>
 <span class="w">    </span><span class="p">}</span><span class="w"></span>
 </code></pre></div>
-<p><img alt="ConcurrentModificationException" src="img/image_2023-02-20-14-46-43.png" /></p>
+<p><img alt="ConcurrentModificationException" src="../img/image_2023-02-20-14-46-43.png" /></p>
 <p>可以看出，当使用 Collections 自己的删除操作时会抛出 ConcurrentModificationException，
 这是因为 <code>foreach</code> 语句本质上是调用 Collections 的 Iterator，使用 Iterator 的 <code>next()</code> 进行迭代，
 以下为 Collections 的源码：</p>
@@ -980,7 +980,7 @@
 <span class="w">  </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">entry</span><span class="p">.</span><span class="na">getKey</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot; iterator value: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">entry</span><span class="p">.</span><span class="na">getValue</span><span class="p">());</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
-<p><img alt="image_2023-02-20-14-47-42" src="img/image_2023-02-20-14-47-42.png" /></p>
+<p><img alt="image_2023-02-20-14-47-42" src="../img/image_2023-02-20-14-47-42.png" /></p>
 <h2 id="java8_1">Java8 之后的遍历<a class="headerlink" href="#java8_1" title="Permanent link">&para;</a></h2>
 <h3 id="lambda">lambda 表达式<a class="headerlink" href="#lambda" title="Permanent link">&para;</a></h3>
 <p>最常用的一种遍历，注意这种方式也不能动态修改 map</p>
