@@ -13,7 +13,7 @@
     
     
       
-        <title>TS 中的数据类型(Datatype) - Puuaru's notes</title>
+        <title>enum - Puuaru's notes</title>
       
     
     
@@ -66,7 +66,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#ts-datatype" class="md-skip">
+        <a href="#enum" class="md-skip">
           跳转至
         </a>
       
@@ -99,7 +99,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              TS 中的数据类型(Datatype)
+              enum
             
           </span>
         </div>
@@ -543,20 +543,6 @@
               
   
   
-  
-    <li class="md-nav__item">
-      <a href="../enum/" class="md-nav__link">
-        enum
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
     
   
   
@@ -569,12 +555,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          TS 中的数据类型(Datatype)
+          enum
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        TS 中的数据类型(Datatype)
+        enum
       </a>
       
         
@@ -593,76 +579,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    数据类型种类
-  </a>
-  
-    <nav class="md-nav" aria-label="数据类型种类">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#js" class="md-nav__link">
-    来自 JS 的数据类型
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ts" class="md-nav__link">
-    TS 自己的数据类型
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#ts_1" class="md-nav__link">
-    TS 的包装对象
+  <a href="#enum_1" class="md-nav__link">
+    enum 的使用场景
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#record" class="md-nav__link">
-    用类型签名和 Record 描述对象
-  </a>
-  
-    <nav class="md-nav" aria-label="用类型签名和 Record 描述对象">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    索引签名
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    使用泛型描述数组
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    元组
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    函数对象
+  <a href="#enum_2" class="md-nav__link">
+    不应使用 enum 的情况
   </a>
   
 </li>
@@ -671,6 +596,20 @@
   
 </nav>
       
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8BDatatype/" class="md-nav__link">
+        TS 中的数据类型(Datatype)
+      </a>
     </li>
   
 
@@ -804,76 +743,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    数据类型种类
-  </a>
-  
-    <nav class="md-nav" aria-label="数据类型种类">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#js" class="md-nav__link">
-    来自 JS 的数据类型
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ts" class="md-nav__link">
-    TS 自己的数据类型
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#ts_1" class="md-nav__link">
-    TS 的包装对象
+  <a href="#enum_1" class="md-nav__link">
+    enum 的使用场景
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#record" class="md-nav__link">
-    用类型签名和 Record 描述对象
-  </a>
-  
-    <nav class="md-nav" aria-label="用类型签名和 Record 描述对象">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    索引签名
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    使用泛型描述数组
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    元组
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    函数对象
+  <a href="#enum_2" class="md-nav__link">
+    不应使用 enum 的情况
   </a>
   
 </li>
@@ -893,130 +771,83 @@
                   
 
 
-<h1 id="ts-datatype">TS 中的数据类型(Datatype)<a class="headerlink" href="#ts-datatype" title="Permanent link">&para;</a></h1>
-<h2 id="_1">数据类型种类<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<p>TS 的数据类型种类主要有两种：来自 JS 的数据类型和来自 TS 自身的数据类型</p>
-<h3 id="js">来自 JS 的数据类型<a class="headerlink" href="#js" title="Permanent link">&para;</a></h3>
-<p>null, undefined, string, number, boolean, bigint, symbol,
-object (含 Array, Function, Date, RegExp...)</p>
-<h3 id="ts">TS 自己的数据类型<a class="headerlink" href="#ts" title="Permanent link">&para;</a></h3>
-<p>void, never, enum, unknown, any,
-自定义类型：type, interface</p>
-<h2 id="ts_1">TS 的包装对象<a class="headerlink" href="#ts_1" title="Permanent link">&para;</a></h2>
-<p>像 java 一样，TS 也有包装类的说法</p>
-<p>TS 的包装类一般包含以下方法：</p>
-<ol>
-<li>字符串转换：<code>toString()</code>, <code>toLocaleString()</code>, 后者根据运行环境决定 String 的实现</li>
-<li>表示方法/精度转换：指数式显式 <code>toExponential()</code>，
-位数指定 <code>toPrecision()</code>，小数位位数指定 <code>toFixed()</code></li>
-<li>ValueOf() 方法</li>
-</ol>
-<p>实际使用时一般不会显式地用到包装类，但每个基本数据类型都可通过调用上述包装类的方法来使用包装类，
-此时 TS 会隐式地将变量转换为对应的包装类并执行逻辑:</p>
-<div class="highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Number</span><span class="p">(</span><span class="mf">42</span><span class="p">);</span><span class="w"></span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="p">.</span><span class="nx">toFixed</span><span class="p">(</span><span class="mf">4</span><span class="p">));</span><span class="w"></span>
-</code></pre></div>
-<p><img alt="image_2023-02-26-20-43-10" src="../img/image_2023-02-26-20-43-10.png" /></p>
-<p>上述代码的执行逻辑如下：</p>
-<ol>
-<li>声明一个临时的包装类对象 <code>let temp = new Number(42)</code></li>
-<li>对 a 进行赋值 <code>a = temp.toFixed(4)</code></li>
-<li>删除 temp</li>
-</ol>
-<h2 id="record">用类型签名和 Record 描述对象<a class="headerlink" href="#record" title="Permanent link">&para;</a></h2>
-<p>虽然 TS 有 Object 类型，但因为 Object 类型的范围太大，
-这会使得数据类型的描述过于宽泛，所以一般不会使用 Object 来描述对象的数据类型</p>
-<p>此时一般使用以下方法描述对象的数据类型：</p>
-<ol>
-<li>class/ constructor, 这种方式对于 TS 来说有些死板，用的人不多</li>
-<li>type / interface</li>
-</ol>
-<div class="highlight"><pre><span></span><code><span class="kr">type</span><span class="w"> </span><span class="nx">Person</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<h1 id="enum">enum<a class="headerlink" href="#enum" title="Permanent link">&para;</a></h1>
+<h2 id="enum_1">enum 的使用场景<a class="headerlink" href="#enum_1" title="Permanent link">&para;</a></h2>
+<p>enum 枚举常被用来为各种标志位设置语义提示，比如：</p>
+<p>当后端返回的 json 数据中有一个字段 status，
+该字段通过不同的整数取值表示不同的状态时，
+便可考虑使用 enum 来为这些取值设置语义：</p>
+<div class="highlight"><pre><span></span><code><span class="kd">enum</span><span class="w"> </span><span class="nx">Status</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="c1">// 为任意元素设置初始值后，ts会自动为后续元素设置递增后的值</span><span class="w"></span>
+<span class="w">  </span><span class="nx">todo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nx">done</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nx">archived</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nx">deleted</span><span class="p">,</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="kd">interface</span><span class="w"> </span><span class="nx">R</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">  </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span><span class="w"></span>
-<span class="w">  </span><span class="nx">age</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="nx">status</span><span class="o">:</span><span class="w"> </span><span class="kt">Status</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="kd">let</span><span class="w"> </span><span class="nx">file</span><span class="o">:</span><span class="w"> </span><span class="kt">R</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;temp&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nx">status</span><span class="o">:</span><span class="w"> </span><span class="kt">Status.archived</span><span class="p">,</span><span class="w"></span>
 <span class="p">};</span><span class="w"></span>
 
-<span class="kd">const</span><span class="w"> </span><span class="nx">a</span><span class="o">:</span><span class="w"> </span><span class="kt">Person</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">  </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Lloyd&#39;</span><span class="p">,</span><span class="w"></span>
-<span class="w">  </span><span class="nx">age</span><span class="o">:</span><span class="w"> </span><span class="kt">18</span><span class="p">,</span><span class="w"></span>
-<span class="p">};</span><span class="w"></span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">file</span><span class="p">.</span><span class="nx">status</span><span class="p">);</span><span class="w">   </span><span class="c1">// 2</span><span class="w"></span>
 </code></pre></div>
-<h3 id="_2">索引签名<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
-<p>通过索引签名可以指定一个数据类型为 key value 结构，同时让它可以拥有拓展的属性数量
-并指定其中 key 和 value 的数据类型，key 可以是 string, symbol 和 number 类型</p>
-<blockquote>
-<p>symbol 的使用场景非常少</p>
-</blockquote>
-<p>声明索引签名之后，与 key 为同类型的字段名，其值的类型必须与签名的 value 的类型一致,
-当 key 是 string 类型时，由于本身就使用 string 类型作为字段索引，就算字段名是数字也会被解释为 string，
-所以此时数据结构的各字段必须遵循该签名结构</p>
-<blockquote>
-<p>下列代码中，name 字段和 email 字段可以限定此签名的数据结构必须包含这两个索引</p>
-</blockquote>
-<div class="highlight"><pre><span></span><code><span class="kr">type</span><span class="w"> </span><span class="nx">Person</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">  </span><span class="p">[</span><span class="nx">k</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">]</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span><span class="w"></span>
-<span class="w">  </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span><span class="w"></span>
-<span class="w">  </span><span class="nx">email</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span><span class="w"></span>
+<p>此外，enum 也可以用作前端的权限控制</p>
+<div class="highlight"><pre><span></span><code><span class="kd">enum</span><span class="w"> </span><span class="nx">Permission</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nx">None</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span><span class="w"> </span><span class="c1">// 0000</span><span class="w"></span>
+<span class="w">  </span><span class="nx">Read</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span><span class="w"> </span><span class="c1">// 0001</span><span class="w"></span>
+<span class="w">  </span><span class="nx">Write</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="c1">// 0010</span><span class="w"></span>
+<span class="w">  </span><span class="nx">Delete</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="c1">// 0100</span><span class="w"></span>
+<span class="w">  </span><span class="nx">Manage</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">Read</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">Write</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">Delete</span><span class="p">,</span><span class="w"> </span><span class="c1">// 0111</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="kr">type</span><span class="w"> </span><span class="nx">User</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nx">permission</span><span class="o">:</span><span class="w"> </span><span class="kt">Permission</span><span class="p">;</span><span class="w"></span>
 <span class="p">};</span><span class="w"></span>
 
-<span class="kr">type</span><span class="w"> </span><span class="nx">Person2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">Record</span><span class="o">&lt;</span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="kt">string</span><span class="o">&gt;</span><span class="w"> </span><span class="c1">// 和Person是类似的，但没有对name, email的存在性约束</span><span class="w"></span>
-
-<span class="kd">const</span><span class="w"> </span><span class="nx">a</span><span class="o">:</span><span class="w"> </span><span class="kt">Person</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">  </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Lloyd&#39;</span><span class="p">,</span><span class="w"></span>
-<span class="w">  </span><span class="nx">email</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;aaa@mail.com&#39;</span><span class="p">,</span><span class="w"></span>
-<span class="w">  </span><span class="nx">sex</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;male&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">user</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="c1">// 0b 代表二进制</span><span class="w"></span>
+<span class="w">  </span><span class="nx">permission</span><span class="o">:</span><span class="w"> </span><span class="kt">0b0111</span><span class="p">,</span><span class="w"></span>
 <span class="p">};</span><span class="w"></span>
 
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="p">[</span><span class="s1">&#39;sex&#39;</span><span class="p">]);</span><span class="w"></span>
+<span class="c1">// 权限判断</span><span class="w"></span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">canWrite</span><span class="p">(</span><span class="nx">user</span><span class="p">.</span><span class="nx">permission</span><span class="p">))</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;用户具有写权限&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">canManage</span><span class="p">(</span><span class="nx">user</span><span class="p">.</span><span class="nx">permission</span><span class="p">))</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;用户具有管理权限&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="kd">function</span><span class="w"> </span><span class="nx">canWrite</span><span class="p">(</span><span class="nx">permission</span><span class="o">:</span><span class="w"> </span><span class="kt">Permission</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span><span class="nx">permission</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="nx">Permission</span><span class="p">.</span><span class="nx">Write</span><span class="p">)</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="nx">Permission</span><span class="p">.</span><span class="nx">Write</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="kd">function</span><span class="w"> </span><span class="nx">canManage</span><span class="p">(</span><span class="nx">permission</span><span class="o">:</span><span class="w"> </span><span class="kt">Permission</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span><span class="nx">user</span><span class="p">.</span><span class="nx">permission</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="nx">Permission</span><span class="p">.</span><span class="nx">Manage</span><span class="p">)</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="nx">Permission</span><span class="p">.</span><span class="nx">Manage</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </code></pre></div>
-<p><img alt="image_2023-02-26-21-17-56" src="../img/image_2023-02-26-21-17-56.png" /></p>
-<p>另需注意区分 <code>[k: string]: {value: string}</code> 和 <code>[k: string]: string</code>,
-前者表示数据签名限定索引为 string 类型，值为包含 string 类型的 value 字段的 object,
-而后者表示数据签名限定索引为 string 类型，值为 string 类型</p>
-<h2 id="_3">使用泛型描述数组<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
-<p>由于直接使用 <code>type A: Array</code> 太不精确，TS 要求使用 <code>Array&lt;T&gt;</code>, <code>T[]</code>
-或 <code>[T1, T2, ...]</code> 来表述数组</p>
-<p>以下两个类型等价：</p>
-<div class="highlight"><pre><span></span><code><span class="kr">type</span><span class="w"> </span><span class="nx">A</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kt">string</span><span class="p">[];</span><span class="w"></span>
-<span class="kr">type</span><span class="w"> </span><span class="nx">B</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Array</span><span class="o">&lt;</span><span class="kt">string</span><span class="o">&gt;</span><span class="w"></span>
+<h2 id="enum_2">不应使用 enum 的情况<a class="headerlink" href="#enum_2" title="Permanent link">&para;</a></h2>
+<p>当选项本身边存在语义的时候不应使用 enum，而应该直接使用 type 定义集合</p>
+<div class="highlight"><pre><span></span><code><span class="kd">enum</span><span class="w"> </span><span class="nx">Fruit</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nx">apple</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;apple&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nx">banana</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;banana&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nx">pineapple</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;pineapple&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nx">watermelon</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;watermelon&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="kd">let</span><span class="w"> </span><span class="nx">f</span><span class="o">:</span><span class="w"> </span><span class="kt">Fruit</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">Fruit</span><span class="p">.</span><span class="nx">apple</span><span class="p">;</span><span class="w"></span>
+<span class="nx">f</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">Fruit</span><span class="p">.</span><span class="nx">watermelon</span><span class="p">;</span><span class="w"></span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">f</span><span class="p">);</span><span class="w"></span>
 </code></pre></div>
-<h2 id="_4">元组<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
-<p>以下类型分别为二元组和三元组</p>
-<div class="highlight"><pre><span></span><code><span class="kr">type</span><span class="w"> </span><span class="nx">A</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="kt">string</span><span class="p">]</span><span class="w"></span>
-<span class="kr">type</span><span class="w"> </span><span class="nx">B</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="kt">number</span><span class="p">]</span><span class="w"></span>
-
-<span class="kr">type</span><span class="w"> </span><span class="nx">C</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="mf">3</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="mf">4</span><span class="p">]</span><span class="w"> </span><span class="c1">// 这里指数组的前两个元分别数据类型是限定为1, 2的两个集合，第三个元是包含3, 4的集合</span><span class="w"></span>
-<span class="kd">const</span><span class="w"> </span><span class="nx">c</span><span class="o">:</span><span class="w"> </span><span class="kt">C</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="mf">4</span><span class="p">]</span><span class="w"></span>
-</code></pre></div>
-<h2 id="_5">函数对象<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><span class="kr">type</span><span class="w"> </span><span class="nx">FnReturnVoid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="ow">void</span><span class="p">;</span><span class="w"></span>
-<span class="kd">const</span><span class="w"> </span><span class="nx">f1</span><span class="o">:</span><span class="w"> </span><span class="kt">FnReturnVoid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;h1&#39;</span><span class="p">);</span><span class="w"></span>
-<span class="p">};</span><span class="w"></span>
-
-
-<span class="c1">// this的用法</span><span class="w"></span>
-<span class="kr">type</span><span class="w"> </span><span class="nx">Person</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">  </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span><span class="w"></span>
-<span class="w">  </span><span class="nx">age</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">;</span><span class="w"></span>
-<span class="w">  </span><span class="nx">sayHi</span><span class="o">:</span><span class="w"> </span><span class="kt">FnWithThis</span><span class="p">;</span><span class="w"></span>
-<span class="p">};</span><span class="w"></span>
-
-<span class="kr">type</span><span class="w"> </span><span class="nx">FnWithThis</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="nx">this</span><span class="o">:</span><span class="w"> </span><span class="kt">Person</span><span class="p">,</span><span class="w"> </span><span class="nx">msg</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="ow">void</span><span class="p">;</span><span class="w"></span>
-
-<span class="c1">// 箭头函数不支持this</span><span class="w"></span>
-<span class="kd">const</span><span class="w"> </span><span class="nx">sayHi</span><span class="o">:</span><span class="w"> </span><span class="kt">FnWithThis</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="p">(</span><span class="nx">msg</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s1">&#39; &#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">msg</span><span class="p">);</span><span class="w"></span>
-<span class="p">};</span><span class="w"></span>
-
-<span class="kd">const</span><span class="w"> </span><span class="nx">a</span><span class="o">:</span><span class="w"> </span><span class="kt">Person</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">  </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Lloyd&#39;</span><span class="p">,</span><span class="w"></span>
-<span class="w">  </span><span class="nx">age</span><span class="o">:</span><span class="w"> </span><span class="kt">18</span><span class="p">,</span><span class="w"></span>
-<span class="w">  </span><span class="nx">sayHi</span><span class="o">:</span><span class="w"> </span><span class="kt">sayHi</span><span class="p">,</span><span class="w"></span>
-<span class="p">};</span><span class="w"></span>
-
-<span class="nx">a</span><span class="p">.</span><span class="nx">sayHi</span><span class="p">(</span><span class="s1">&#39;Hello&#39;</span><span class="p">);</span><span class="w"></span>
-</code></pre></div>
+<p>以上例子中，因为 Fruit 中的选项所代表的值本身就有便于理解的完整语义，
+因此再使用 enum 就会显得多此一举</p>
+<p>由于 typescript 的数据类型本质上是一种值的集合，
+所以上述代码可以直接改成以下形式:</p>
 
 
 
@@ -1037,7 +868,7 @@ object (含 Array, Function, Date, RegExp...)</p>
     <nav class="md-footer__inner md-grid" aria-label="页脚" >
       
         
-        <a href="../enum/" class="md-footer__link md-footer__link--prev" aria-label="上一页: enum" rel="prev">
+        <a href="../any%26unknown%26never/" class="md-footer__link md-footer__link--prev" aria-label="上一页: any 和 unknown 和 never" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -1046,20 +877,20 @@ object (含 Array, Function, Date, RegExp...)</p>
               <span class="md-footer__direction">
                 上一页
               </span>
-              enum
+              any 和 unknown 和 never
             </div>
           </div>
         </a>
       
       
         
-        <a href="../../../../%E8%A3%85%E6%9C%BA/%E7%B3%BB%E7%BB%9F/%E5%88%B6%E4%BD%9C%E5%8F%AF%E5%90%AF%E5%8A%A8U%E7%9B%98/" class="md-footer__link md-footer__link--next" aria-label="下一页: 制作可启动U盘" rel="next">
+        <a href="../%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8BDatatype/" class="md-footer__link md-footer__link--next" aria-label="下一页: TS 中的数据类型(Datatype)" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 下一页
               </span>
-              制作可启动U盘
+              TS 中的数据类型(Datatype)
             </div>
           </div>
           <div class="md-footer__button md-icon">
