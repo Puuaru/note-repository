@@ -157,4 +157,16 @@ const a: Person = {
 };
 
 a.sayHi('Hello');
+
+// 携带属性的函数对象，常用于 react 里
+type FnWithProp = {
+  (a: number, b: number): void;
+  // 以对象的方式声明函数结构，将 props 作为一个字段
+  prop: string;
+};
+
+const f: FnWithProp = (x, y) => {
+  return x * y;
+};
+f.prop = 'hello';
 ```

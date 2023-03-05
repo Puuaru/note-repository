@@ -13,7 +13,7 @@
     
     
       
-        <title>enum - Puuaru's notes</title>
+        <title>type & interface 区别 - Puuaru's notes</title>
       
     
     
@@ -66,7 +66,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#enum" class="md-skip">
+        <a href="#type-interface" class="md-skip">
           跳转至
         </a>
       
@@ -99,7 +99,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              enum
+              type & interface 区别
             
           </span>
         </div>
@@ -543,6 +543,20 @@
               
   
   
+  
+    <li class="md-nav__item">
+      <a href="../enum/" class="md-nav__link">
+        enum
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
     
   
   
@@ -555,12 +569,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          enum
+          type & interface 区别
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        enum
+        type & interface 区别
       </a>
       
         
@@ -579,16 +593,50 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#enum_1" class="md-nav__link">
-    enum 的使用场景
+  <a href="#type" class="md-nav__link">
+    type
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#enum_2" class="md-nav__link">
-    不应使用 enum 的情况
+  <a href="#interface" class="md-nav__link">
+    interface
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    区别
+  </a>
+  
+    <nav class="md-nav" aria-label="区别">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    1. 范围不同
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    2. 描述的性质不同
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-type-interface" class="md-nav__link">
+    3. type 不可重新赋值，而 interface 可以进行自动合并
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -596,20 +644,6 @@
   
 </nav>
       
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../type%26interface/" class="md-nav__link">
-        type & interface 区别
-      </a>
     </li>
   
 
@@ -757,16 +791,50 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#enum_1" class="md-nav__link">
-    enum 的使用场景
+  <a href="#type" class="md-nav__link">
+    type
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#enum_2" class="md-nav__link">
-    不应使用 enum 的情况
+  <a href="#interface" class="md-nav__link">
+    interface
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    区别
+  </a>
+  
+    <nav class="md-nav" aria-label="区别">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    1. 范围不同
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    2. 描述的性质不同
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-type-interface" class="md-nav__link">
+    3. type 不可重新赋值，而 interface 可以进行自动合并
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -785,83 +853,89 @@
                   
 
 
-<h1 id="enum">enum<a class="headerlink" href="#enum" title="Permanent link">&para;</a></h1>
-<h2 id="enum_1">enum 的使用场景<a class="headerlink" href="#enum_1" title="Permanent link">&para;</a></h2>
-<p>enum 枚举常被用来为各种标志位设置语义提示，比如：</p>
-<p>当后端返回的 json 数据中有一个字段 status，
-该字段通过不同的整数取值表示不同的状态时，
-便可考虑使用 enum 来为这些取值设置语义：</p>
-<div class="highlight"><pre><span></span><code><span class="kd">enum</span><span class="w"> </span><span class="nx">Status</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">  </span><span class="c1">// 为任意元素设置初始值后，ts会自动为后续元素设置递增后的值</span><span class="w"></span>
-<span class="w">  </span><span class="nx">todo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span><span class="w"></span>
-<span class="w">  </span><span class="nx">done</span><span class="p">,</span><span class="w"></span>
-<span class="w">  </span><span class="nx">archived</span><span class="p">,</span><span class="w"></span>
-<span class="w">  </span><span class="nx">deleted</span><span class="p">,</span><span class="w"></span>
+<h1 id="type-interface">type &amp; interface 区别<a class="headerlink" href="#type-interface" title="Permanent link">&para;</a></h1>
+<h2 id="type">type<a class="headerlink" href="#type" title="Permanent link">&para;</a></h2>
+<p>type 又称*类型别名*，其本质上是给所定义的类型去别名，
+大多数场合下都可以使用 type</p>
+<blockquote>
+<p>typescript 中的每一个类型都是一个集合，
+像 <code>type A = 0</code> 里的 0 表示的是仅有0一个值的集合，
+由此类推 <code>type falseLike = false | null | '' | undefined</code>，
+则是表示 falseLike 是将包含后面几个仅有一个值的集合的集合作为一种类型;
+而 <code>type Person = { name: string; age: number }</code>
+则是表示将包含 name, age 两个字段的对象集合命名为 Person 类型</p>
+</blockquote>
+<h2 id="interface">interface<a class="headerlink" href="#interface" title="Permanent link">&para;</a></h2>
+<p>接口的概念源自面向对象编程;
+typescript 中的 interface 用以声明接口，描述**对象的属性**，
+interface 和给对象取别名时的 type 还是类似的，以下代码中两种 <code>Paper</code> 实现是一致的：</p>
+<div class="highlight"><pre><span></span><code><span class="kd">interface</span><span class="w"> </span><span class="nx">Paper</span><span class="w"> </span><span class="k">extends</span><span class="w"> </span><span class="nb">Array</span><span class="o">&lt;</span><span class="kt">string</span><span class="o">&gt;</span><span class="p">,</span><span class="w"> </span><span class="nx">Article</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="nx">field</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 
-<span class="kd">interface</span><span class="w"> </span><span class="nx">R</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="kd">interface</span><span class="w"> </span><span class="nx">Article</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nx">wordCount</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="kr">type</span><span class="w"> </span><span class="nx">PaperInType</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Array</span><span class="o">&lt;</span><span class="kt">string</span><span class="o">&gt;</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="nx">field</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="nx">Article</span><span class="p">;</span><span class="w"></span>
+</code></pre></div>
+<h2 id="_1">区别<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<h3 id="1">1. 范围不同<a class="headerlink" href="#1" title="Permanent link">&para;</a></h3>
+<p>就像上面说到的那样，interface 只能描述 <strong>对象</strong>，而 type 则可描述所有数据，
+因此它不能像 type 那样仅用 string, number 等类型的某些值组装类型</p>
+<h3 id="2">2. 描述的性质不同<a class="headerlink" href="#2" title="Permanent link">&para;</a></h3>
+<p>type 只是取别名，而 interface 则是类型**声明**，
+经过 interface 声明的类型是真实存在的，而 type 往往还会被 lsp 转换为原始结构
+不过这点在使用上体验差距不大</p>
+<p><img alt="type的类型推断" src="../img/image_2023-02-28-14-23-37.png" /></p>
+<p><img alt="interface的类型推断" src="../img/image_2023-02-28-14-24-34.png" /></p>
+<h3 id="3-type-interface">3. type 不可重新赋值，而 interface 可以进行自动合并<a class="headerlink" href="#3-type-interface" title="Permanent link">&para;</a></h3>
+<p>不可重新赋值既是 type 的优点，也是 type 的缺点</p>
+<p>不可重新赋值使 type 在编译的时候有更高的性能，
+同时避免其在使用时出现二义性，但也使其拓展性降低</p>
+<p>与之相反的是，typescript 可以通过声明同名接口来为该接口添加新的属性</p>
+<div class="highlight"><pre><span></span><code><span class="kd">interface</span><span class="w"> </span><span class="nx">ForExpand</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">  </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span><span class="w"></span>
-<span class="w">  </span><span class="nx">status</span><span class="o">:</span><span class="w"> </span><span class="kt">Status</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="nx">age</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">;</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 
-<span class="kd">let</span><span class="w"> </span><span class="nx">file</span><span class="o">:</span><span class="w"> </span><span class="kt">R</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">  </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;temp&#39;</span><span class="p">,</span><span class="w"></span>
-<span class="w">  </span><span class="nx">status</span><span class="o">:</span><span class="w"> </span><span class="kt">Status.archived</span><span class="p">,</span><span class="w"></span>
-<span class="p">};</span><span class="w"></span>
-
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">file</span><span class="p">.</span><span class="nx">status</span><span class="p">);</span><span class="w">   </span><span class="c1">// 2</span><span class="w"></span>
-</code></pre></div>
-<p>此外，enum 也可以用作前端的权限控制</p>
-<div class="highlight"><pre><span></span><code><span class="kd">enum</span><span class="w"> </span><span class="nx">Permission</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">  </span><span class="nx">None</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span><span class="w"> </span><span class="c1">// 0000</span><span class="w"></span>
-<span class="w">  </span><span class="nx">Read</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span><span class="w"> </span><span class="c1">// 0001</span><span class="w"></span>
-<span class="w">  </span><span class="nx">Write</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="c1">// 0010</span><span class="w"></span>
-<span class="w">  </span><span class="nx">Delete</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="c1">// 0100</span><span class="w"></span>
-<span class="w">  </span><span class="nx">Manage</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">Read</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">Write</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">Delete</span><span class="p">,</span><span class="w"> </span><span class="c1">// 0111</span><span class="w"></span>
+<span class="c1">// 可以出现在不同的文件中</span><span class="w"></span>
+<span class="kd">interface</span><span class="w"> </span><span class="nx">ForExpand</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nx">expanded</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="nx">sex?</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 
-<span class="kr">type</span><span class="w"> </span><span class="nx">User</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">  </span><span class="nx">permission</span><span class="o">:</span><span class="w"> </span><span class="kt">Permission</span><span class="p">;</span><span class="w"></span>
-<span class="p">};</span><span class="w"></span>
-
-<span class="kd">const</span><span class="w"> </span><span class="nx">user</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">  </span><span class="c1">// 0b 代表二进制</span><span class="w"></span>
-<span class="w">  </span><span class="nx">permission</span><span class="o">:</span><span class="w"> </span><span class="kt">0b0111</span><span class="p">,</span><span class="w"></span>
-<span class="p">};</span><span class="w"></span>
-
-<span class="c1">// 权限判断</span><span class="w"></span>
-<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">canWrite</span><span class="p">(</span><span class="nx">user</span><span class="p">.</span><span class="nx">permission</span><span class="p">))</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;用户具有写权限&#39;</span><span class="p">);</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
-<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">canManage</span><span class="p">(</span><span class="nx">user</span><span class="p">.</span><span class="nx">permission</span><span class="p">))</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;用户具有管理权限&#39;</span><span class="p">);</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
-
-<span class="kd">function</span><span class="w"> </span><span class="nx">canWrite</span><span class="p">(</span><span class="nx">permission</span><span class="o">:</span><span class="w"> </span><span class="kt">Permission</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span><span class="nx">permission</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="nx">Permission</span><span class="p">.</span><span class="nx">Write</span><span class="p">)</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="nx">Permission</span><span class="p">.</span><span class="nx">Write</span><span class="p">;</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
-
-<span class="kd">function</span><span class="w"> </span><span class="nx">canManage</span><span class="p">(</span><span class="nx">permission</span><span class="o">:</span><span class="w"> </span><span class="kt">Permission</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span><span class="nx">user</span><span class="p">.</span><span class="nx">permission</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="nx">Permission</span><span class="p">.</span><span class="nx">Manage</span><span class="p">)</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="nx">Permission</span><span class="p">.</span><span class="nx">Manage</span><span class="p">;</span><span class="w"></span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">a</span><span class="o">:</span><span class="w"> </span><span class="kt">ForExpand</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;name&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nx">age</span><span class="o">:</span><span class="w"> </span><span class="kt">18</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nx">expanded</span><span class="o">:</span><span class="w"> </span><span class="kt">false</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
-<h2 id="enum_2">不应使用 enum 的情况<a class="headerlink" href="#enum_2" title="Permanent link">&para;</a></h2>
-<p>当选项本身边存在语义的时候不应使用 enum，而应该直接使用 type 定义集合</p>
-<div class="highlight"><pre><span></span><code><span class="kd">enum</span><span class="w"> </span><span class="nx">Fruit</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">  </span><span class="nx">apple</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;apple&#39;</span><span class="p">,</span><span class="w"></span>
-<span class="w">  </span><span class="nx">banana</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;banana&#39;</span><span class="p">,</span><span class="w"></span>
-<span class="w">  </span><span class="nx">pineapple</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;pineapple&#39;</span><span class="p">,</span><span class="w"></span>
-<span class="w">  </span><span class="nx">watermelon</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;watermelon&#39;</span><span class="p">,</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<p>实际应用上便可通过这个特性来方便地封装一些模块的代码：</p>
+<div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="nx">InterfaceWaitForExpand</span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;module&#39;</span><span class="p">;</span><span class="w"></span>
 
-<span class="kd">let</span><span class="w"> </span><span class="nx">f</span><span class="o">:</span><span class="w"> </span><span class="kt">Fruit</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">Fruit</span><span class="p">.</span><span class="nx">apple</span><span class="p">;</span><span class="w"></span>
-<span class="nx">f</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">Fruit</span><span class="p">.</span><span class="nx">watermelon</span><span class="p">;</span><span class="w"></span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">f</span><span class="p">);</span><span class="w"></span>
+<span class="kr">declare</span><span class="w"> </span><span class="nx">module</span><span class="w"> </span><span class="s1">&#39;module&#39;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="c1">// 指定只拓展 module 模块的内容</span><span class="w"></span>
+<span class="w">  </span><span class="k">export</span><span class="w"> </span><span class="kd">interface</span><span class="w"> </span><span class="nx">InterfaceWaitForExpand</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// 这里输出定义了两个字段到 InterfaceWaitForExpand 接口中</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// ts 会将这两个字段合并到 module 中的 InterfaceWaitForExpand 接口</span><span class="w"></span>
+<span class="w">    </span><span class="nx">_field1</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="nx">_field2</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </code></pre></div>
-<p>以上例子中，因为 Fruit 中的选项所代表的值本身就有便于理解的完整语义，
-因此再使用 enum 就会显得多此一举</p>
-<p>由于 typescript 的数据类型本质上是一种值的集合，
-所以上述代码可以直接改成以下形式:</p>
+<p>若想扩展全局的接口则可以使用 <code>declare globle</code></p>
+<div class="highlight"><pre><span></span><code><span class="kr">declare</span><span class="w"> </span><span class="nb">global</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="kd">interface</span><span class="w"> </span><span class="nb">String</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nx">padZero</span><span class="p">(</span><span class="nx">length</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<p>因此，<strong>对外 api 尽量使用 interface，方便扩展；对内 api 尽量使用 type，防止代码分散</strong></p>
 
 
 
@@ -882,7 +956,7 @@
     <nav class="md-footer__inner md-grid" aria-label="页脚" >
       
         
-        <a href="../any%26unknown%26never/" class="md-footer__link md-footer__link--prev" aria-label="上一页: any 和 unknown 和 never" rel="prev">
+        <a href="../enum/" class="md-footer__link md-footer__link--prev" aria-label="上一页: enum" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -891,20 +965,20 @@
               <span class="md-footer__direction">
                 上一页
               </span>
-              any 和 unknown 和 never
+              enum
             </div>
           </div>
         </a>
       
       
         
-        <a href="../type%26interface/" class="md-footer__link md-footer__link--next" aria-label="下一页: type &amp; interface 区别" rel="next">
+        <a href="../%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8BDatatype/" class="md-footer__link md-footer__link--next" aria-label="下一页: TS 中的数据类型(Datatype)" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 下一页
               </span>
-              type & interface 区别
+              TS 中的数据类型(Datatype)
             </div>
           </div>
           <div class="md-footer__button md-icon">
