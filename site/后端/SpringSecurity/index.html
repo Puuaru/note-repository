@@ -1,0 +1,1118 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.10">
+    
+    
+      
+        <title>Spring Security Note - Puuaru's notes</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.975780f9.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.2505c338.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#02a6f2">
+        
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="Light-Blue" data-md-color-accent="Pink">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#spring-security-note" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../.." title="Puuaru&#39;s notes" class="md-header__button md-logo" aria-label="Puuaru's notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Puuaru's notes
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Spring Security Note
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Puuaru&#39;s notes" class="md-nav__button md-logo" aria-label="Puuaru's notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Puuaru's notes
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Puuaru's note repository
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          Linux
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Linux" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Linux
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/manjaro%E7%9A%84%E6%A1%8C%E9%9D%A2%E5%90%AF%E5%8A%A8%E5%A4%B1%E8%B4%A5%E9%97%AE%E9%A2%98/" class="md-nav__link">
+        manjaro的桌面启动问题
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/%E4%BD%BF%E7%94%A8rofi%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%AE%9A%E4%B9%89%E8%8F%9C%E5%8D%95/" class="md-nav__link">
+        使用 rofi 实现自定义菜单
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          前端
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="前端" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          前端
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E5%89%8D%E7%AB%AF/vue%E6%95%B4%E5%90%88%E5%AF%8C%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91%E5%99%A8tinymce/" class="md-nav__link">
+        vue 整合 tinymce
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          后端
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="后端" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          后端
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Spring Security Note
+      </a>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E5%AE%A2%E6%88%B7%E7%AB%AF%E6%95%B0%E6%8D%AE%E7%BB%B4%E6%8C%81%E7%9A%84%E6%96%B9%E5%BC%8F/" class="md-nav__link">
+        客户端数据维持的方式
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E7%BB%9F%E4%B8%80%E8%BF%94%E5%9B%9E/" class="md-nav__link">
+        后端统一接口返回
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E9%9B%AA%E8%8A%B1%E7%AE%97%E6%B3%95%E7%9A%84%E7%B2%BE%E5%BA%A6%E9%97%AE%E9%A2%98/" class="md-nav__link">
+        雪花算法的精度问题
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          编程语言
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="编程语言" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          编程语言
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_1" type="checkbox" id="__nav_5_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5_1">
+          Go
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Go" data-md-level="2">
+        <label class="md-nav__title" for="__nav_5_1">
+          <span class="md-nav__icon md-icon"></span>
+          Go
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/go/Golang%E7%9A%84%E5%8C%85%E7%AD%96%E7%95%A5/" class="md-nav__link">
+        Golang 的包策略
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_2" type="checkbox" id="__nav_5_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5_2">
+          Java
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Java" data-md-level="2">
+        <label class="md-nav__title" for="__nav_5_2">
+          <span class="md-nav__icon md-icon"></span>
+          Java
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/java/HashMap%E9%81%8D%E5%8E%86/" class="md-nav__link">
+        HashMap 的遍历方法
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/java/%E5%88%97%E8%A1%A8%E6%8E%92%E5%BA%8F/" class="md-nav__link">
+        列表排序方式
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/java/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E5%AE%9E%E7%8E%B0/" class="md-nav__link">
+        字符串的实现
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_3" type="checkbox" id="__nav_5_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5_3">
+          Typescript
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Typescript" data-md-level="2">
+        <label class="md-nav__title" for="__nav_5_3">
+          <span class="md-nav__icon md-icon"></span>
+          Typescript
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_3_1" type="checkbox" id="__nav_5_3_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5_3_1">
+          学习记录
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="学习记录" data-md-level="3">
+        <label class="md-nav__title" for="__nav_5_3_1">
+          <span class="md-nav__icon md-icon"></span>
+          学习记录
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/typescript/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/any%26unknown%26never/" class="md-nav__link">
+        any 和 unknown 和 never
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/typescript/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/enum/" class="md-nav__link">
+        enum
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/typescript/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/type%26interface/" class="md-nav__link">
+        type & interface 区别
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/typescript/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8BDatatype/" class="md-nav__link">
+        TS 中的数据类型(Datatype)
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6">
+          装机
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="装机" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          装机
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_1" type="checkbox" id="__nav_6_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6_1">
+          系统
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="系统" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_1">
+          <span class="md-nav__icon md-icon"></span>
+          系统
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%A3%85%E6%9C%BA/%E7%B3%BB%E7%BB%9F/%E5%88%B6%E4%BD%9C%E5%8F%AF%E5%90%AF%E5%8A%A8U%E7%9B%98/" class="md-nav__link">
+        制作可启动U盘
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_1_2" type="checkbox" id="__nav_6_1_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6_1_2">
+          Linux
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Linux" data-md-level="3">
+        <label class="md-nav__title" for="__nav_6_1_2">
+          <span class="md-nav__icon md-icon"></span>
+          Linux
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%A3%85%E6%9C%BA/%E7%B3%BB%E7%BB%9F/Linux/KVM/" class="md-nav__link">
+        Linux 下使用 KVM 的笔记
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="spring-security-note">Spring Security Note<a class="headerlink" href="#spring-security-note" title="Permanent link">&para;</a></h1>
+<h1 id="_1">简介<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<p>一般用于中大型项目的安全框架，相比起**shiro**，Spring Security提供更丰富的功能与社区资源</p>
+<h2 id="_2">认证与授权<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>一般Web应用需要进行认证和授权</p>
+<ul>
+<li>
+<p>认证：验证当前访问系统的是否为本系统的用户，具体又是哪个用户</p>
+</li>
+<li>
+<p>授权：经过认证后判断该用户拥有什么权限进行什么操作</p>
+</li>
+</ul>
+<h2 id="_3">基本原理<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>Spring Security本质上是一条过滤器链，其底层主要有三个过滤器</p>
+<p><img alt="image_2023-04-12-19-53-34" src="../img/image_2023-04-12-19-53-34.png" /></p>
+<h3 id="filtersecurityinterceptor">FilterSecurityInterceptor<a class="headerlink" href="#filtersecurityinterceptor" title="Permanent link">&para;</a></h3>
+<p>方法级的权限校验过滤器，基本位于过滤器链的最底部</p>
+<h3 id="exceptiontranslationfilter">ExceptionTranslationFilter<a class="headerlink" href="#exceptiontranslationfilter" title="Permanent link">&para;</a></h3>
+<p>异常过滤器，用来处理在认证授权过程中抛出的任何AccessDeniedException和AuthenticationException异常</p>
+<h3 id="usernamepasswordauthenticationfilter">UsernamePasswordAuthenticationFilter<a class="headerlink" href="#usernamepasswordauthenticationfilter" title="Permanent link">&para;</a></h3>
+<p>对/login的POST请求做拦截，校验表单中的用户名和密码</p>
+<h2 id="_4">快速开始<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<p>为模块引入如下依赖</p>
+<div class="highlight"><pre><span></span><code>&lt;dependencies&gt;
+  &lt;dependency&gt;
+    &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+    &lt;artifactId&gt;spring-boot-starter-web&lt;/artifactId&gt;
+  &lt;/dependency&gt;
+  &lt;dependency&gt;
+    &lt;groupId&gt;org.projectlombok&lt;/groupId&gt;
+    &lt;artifactId&gt;lombok&lt;/artifactId&gt;
+    &lt;optional&gt;true&lt;/optional&gt;
+  &lt;/dependency&gt;
+  &lt;!-- Spring Security --&gt;
+  &lt;dependency&gt;
+    &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+    &lt;artifactId&gt;spring-boot-starter-security&lt;/artifactId&gt;
+  &lt;/dependency&gt;
+&lt;/dependencies&gt;
+</code></pre></div>
+<p>引入后Spring Security将自带认证及其默认认证账户 <code>user</code> ，为资源访问添加一个认证界面(可用户自定义)并在控制台中输出临时的用户密码</p>
+<div class="highlight"><pre><span></span><code>Using generated security password: 531d7c71-7435-4d38-ac4b-d678eae86498
+</code></pre></div>
+<h2 id="_5">认证<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<h3 id="_6">现代前后端分离项目认证流程<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<p><img alt="image_2023-04-12-19-54-52" src="../img/image_2023-04-12-19-54-52.png" /></p>
+<h3 id="_7">自定义逻辑过程<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<p>结合上文提到的基本原理，自定义认证的逻辑可以如下：</p>
+<ul>
+<li>
+<p>创建一个类继承 <code>UsernamePasswordAuthenticationFilter</code> 并重写3个方法</p>
+</li>
+<li>
+<p>实现 <code>UserDetailsService</code> 并注入容器，Spring Security会自动使用该实现作为新的 <code>UserDetailsService</code>
+  ，当然也可以在config类中指定使用的 <code>UserDetailsService</code> ；实现类中可编写查询数据库与授权等过程，最终返回安全框架提供的 <code>UserDetails</code> 对象（该对象可以通过编写实现类对已有的 <code>User</code>
+  实体进行封装）</p>
+</li>
+<li>
+<p>实现 <code>PasswordEncoder</code> 接口对密码进行加密，官方推荐使用 <code>BCryptPasswordEncoder</code>
+  实现类来进行加密，该实现类是BCrypt强散列方法的具体实现，是基于哈希算法实现的单向加密，可以通过 <code>strength</code> 来控制加密强度，默认为10</p>
+</li>
+</ul>
+<h2 id="_8">授权<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
+<p>不同的用户可以使用不同的功能</p>
+<p>不能只依赖前端来判断用户的权限来选择显示哪些菜单哪些按钮，如果只是这样，一旦有人知道了对应功能的接口地址就可以不通过前端而直接发送请求去实现相关功能的操作，因此需要在后端进行用户权限的判断，判断当前用户是否有响应的权限，必须具有所需权限才能进行响应操作。</p>
+<h3 id="_9">授权基本流程<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
+<p>在Spring
+Security中会使用默认的FilterSecurityInterceptor来进行权限校验。在FilterSecurityInterceptor中会从SecurityContextHolder获取其中的Authentication，然后获取其中的权限信息来确定当前用户是否拥有访问当前资源所需的权限。</p>
+<p>因此为项目添加权限操作只需要把当前登录用户的权限也存入Authentication，然后为资源设置所需权限即可。</p>
+<h3 id="_10">授权实现<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
+<h4 id="_11">限制访问资源所需权限<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h4>
+<p>Spring Security提供了基于注解的权限控制方案，也是主要采用的授权方式</p>
+<div class="highlight"><pre><span></span><code><span class="nd">@EnableGlobalMethodSecurity</span><span class="p">(</span><span class="n">prePostEnabled</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">)</span><span class="w">  </span><span class="c1">// 开启配置</span><span class="w"></span>
+</code></pre></div>
+<p>使用对应注解 <code>@PreAuthorize</code></p>
+<h4 id="_12">从数据库中查询权限信息<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h4>
+<h5 id="rbac">RBAC权限模型<a class="headerlink" href="#rbac" title="Permanent link">&para;</a></h5>
+<p>RBAC（Role-Based Access Control）即：基于角色的权限控制，这是目前最常被开发者使用也是相对易用、通用的权限模型</p>
+<p><img alt="image_2023-04-12-19-55-09" src="../img/image_2023-04-12-19-55-09.png" /></p>
+<blockquote>
+<p>关联表建议使用多主键</p>
+</blockquote>
+<p>该权限模型的注意力集中于用户、角色、权限三个实体，其中用户-角色和角色-权限均为多对多关系，因此为避免数据冗余另起数据表分隔</p>
+<p>查询一个角色有哪些权限时，SQL语句如下：</p>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="k">DISTINCT</span><span class="w"> </span><span class="n">m</span><span class="p">.</span><span class="n">perms</span><span class="w"></span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">sys_user_role</span><span class="w"> </span><span class="n">ur</span><span class="w"></span>
+<span class="w">         </span><span class="k">LEFT</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">sys_role</span><span class="w"> </span><span class="n">r</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">ur</span><span class="p">.</span><span class="n">role_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">r</span><span class="p">.</span><span class="n">id</span><span class="w"></span>
+<span class="w">         </span><span class="k">LEFT</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">sys_role_menu</span><span class="w"> </span><span class="n">rm</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">ur</span><span class="p">.</span><span class="n">role_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">rm</span><span class="p">.</span><span class="n">role_id</span><span class="w"></span>
+<span class="w">         </span><span class="k">LEFT</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">sys_menu</span><span class="w"> </span><span class="n">m</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">m</span><span class="p">.</span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">rm</span><span class="p">.</span><span class="n">menu_id</span><span class="w"></span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">user_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span><span class="w"></span>
+<span class="w">  </span><span class="k">AND</span><span class="w"> </span><span class="n">r</span><span class="p">.</span><span class="n">status</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="w"></span>
+<span class="w">  </span><span class="k">AND</span><span class="w"> </span><span class="n">m</span><span class="p">.</span><span class="n">status</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="w"></span>
+</code></pre></div>
+<h2 id="_13">自定义失败处理<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h2>
+<p>若希望在认证失败或授权失败时也能和定义好的ResponseResult一样返回相同结构的json，从而让前端能对响应进行统一的处理，就需要在了解Spring Security的异常处理机制后作自定义失败处理</p>
+<p>在Spring Security中，若认证或授权的过程中出现了异常，会被ExceptionTranslationFilter捕获到，并在其中判断是认证失败还是授权失败出现的异常。</p>
+<p>如果是认证过程中出现的异常会被封装成AuthenticationException然后调用AuthenticationEntryPoint对象的方法去进行异常处理。</p>
+<p>如果是授权过程中出现的异常会被封装成AccessDeniedException然后调用AccessDeniedHandler对象的方法去进行异常处理。</p>
+<p>因此若要自定义失败处理，只需自定义AuthenticationEntryPoint和AccessDeniedHandler然后配置给SpringSecurity即可。</p>
+<h2 id="_14">跨域问题<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h2>
+<h3 id="cors">CORS简介<a class="headerlink" href="#cors" title="Permanent link">&para;</a></h3>
+<p>CORS（Cross-Origin Resource Sharing，跨域资源共享），介绍此概念前需要先介绍**域**、<strong>资源</strong>、**同域策略**三个概念：</p>
+<ul>
+<li>域：指**一个站点**，域由 protocol、host 和 port 三部分组成，其中 host 可以是域名，也可以是 ip ; port 如果没有指明，则是使用 protocol 的默认端口</li>
+<li>资源：指一个 URL 对应的内容</li>
+<li>同域策略：为了防止 XSS（Cross-site
+  scripting，跨站脚本攻击：利用安全漏洞将代码注入到网站上使得用户加载网页时执行攻击者恶意制造的网页程序），浏览器、客户端应该仅请求与当前页面来自同一个域的资源，请求其他域的资源需要通过认证</li>
+</ul>
+<p>由于同域策略的影响，从站点A请求站点B的资源时，这样的跨域请求将被禁止发送；为了让跨域请求能够正常发送，我们需要一套机制在不破坏同域策略安全性的情况下允许跨域请求正常发送，这样的机制就是 CORS</p>
+<h4 id="_15">预检请求<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h4>
+<p>在 CORS 中，定义了一种预检请求（preflight request），当实际请求不是一个**简单请求**时，会发起一次预检请求。预检请求是针对实际请求的 URL 发起一次 OPTIONS 请求，并带上下面三个 headers：</p>
+<ul>
+<li>Origin：当前页面所在的域，用于告诉服务器当前请求的域。如果没有这个header，服务器将不会进行CORS验证</li>
+<li>Access-Control-Request-Method：实际请求将会使用的方法</li>
+<li>Access-Control-Request-Headers：实际请求将会使用到的 header 集合</li>
+</ul>
+<p>如果服务端 CORS 验证失败，则会返回客户端错误，即 4xx 的状态码；否则，将会返回成功，返回 200 的状态码，并携带以下 headers：</p>
+<ul>
+<li>Access-Control-Allow-Origin：允许请求的域，多数情况下就是预检请求中的 Origin 的值</li>
+<li>Access-Control-Allow-Credentials：一个布尔值，表示服务器是否允许使用 cookies</li>
+<li>Access-Control-Expose-Headers：实际请求中可以出现在响应中的 headers 集合</li>
+<li>Access-Control-Max-Age：预检请求返回的规则可以被缓存的最长时间，超过这个时间，需要再次发起预检请求</li>
+<li>Access-Control-Allow-Methods：实际请求中可以使用到的方法集合</li>
+</ul>
+<p>浏览器会根据预检请求的响应，来决定是否发起实际请求</p>
+<h3 id="spring-boot">Spring Boot 中的几种配置方式<a class="headerlink" href="#spring-boot" title="Permanent link">&para;</a></h3>
+<h4 id="crossorigin">@CrossOrigin 注解<a class="headerlink" href="#crossorigin" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="nd">@RestController</span><span class="w"></span>
+<span class="kd">class</span> <span class="nc">HelloController</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nd">@GetMapping</span><span class="p">(</span><span class="s">&quot;hello&quot;</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="nd">@CrossOrigin</span><span class="p">(</span><span class="n">origins</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;http://localhost:8080&quot;</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">hello</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;Hello, CORS&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<h4 id="webmvcconfigureraddcorsmappings">实现 WebMvcConfigurer.addCorsMappings 方法<a class="headerlink" href="#webmvcconfigureraddcorsmappings" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="nd">@Configuration</span><span class="w"></span>
+<span class="nd">@EnableWebMvc</span><span class="w"></span>
+<span class="kd">class</span> <span class="nc">MvcConfig</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">WebMvcConfigurer</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nd">@Override</span><span class="w"></span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">addCorsMappings</span><span class="p">(</span><span class="n">CorsRegistry</span><span class="w"> </span><span class="n">registry</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="c1">// 设置允许跨域的路径</span><span class="w"></span>
+<span class="w">        </span><span class="n">registry</span><span class="p">.</span><span class="na">addMapping</span><span class="p">(</span><span class="s">&quot;/hello&quot;</span><span class="p">)</span><span class="w"></span>
+<span class="w">                </span><span class="c1">// 设置允许跨域请求的域名</span><span class="w"></span>
+<span class="w">                </span><span class="p">.</span><span class="na">allowedOriginsPatterns</span><span class="p">(</span><span class="s">&quot;http://localhost:8080&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<h4 id="corsfilter">注入 CorsFilter<a class="headerlink" href="#corsfilter" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="nd">@Configuration</span><span class="w"></span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">CorsConfig</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+
+<span class="w">    </span><span class="nd">@Bean</span><span class="w"></span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">CorsWebFilter</span><span class="w"> </span><span class="nf">corsWebFilter</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">CorsConfiguration</span><span class="w"> </span><span class="n">configuration</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">CorsConfiguration</span><span class="p">();</span><span class="w"></span>
+<span class="w">        </span><span class="n">configuration</span><span class="p">.</span><span class="na">addAllowedHeader</span><span class="p">(</span><span class="s">&quot;*&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="n">configuration</span><span class="p">.</span><span class="na">addAllowedOrigin</span><span class="p">(</span><span class="s">&quot;*&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="n">configuration</span><span class="p">.</span><span class="na">addAllowedMethod</span><span class="p">(</span><span class="s">&quot;*&quot;</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">        </span><span class="n">UrlBasedCorsConfigurationSource</span><span class="w"> </span><span class="n">source</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">UrlBasedCorsConfigurationSource</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">PathPatternParser</span><span class="p">());</span><span class="w"></span>
+<span class="w">        </span><span class="n">source</span><span class="p">.</span><span class="na">registerCorsConfiguration</span><span class="p">(</span><span class="s">&quot;/**&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">configuration</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">CorsWebFilter</span><span class="p">(</span><span class="n">source</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<h3 id="spring-security">Spring Security 中的配置<a class="headerlink" href="#spring-security" title="Permanent link">&para;</a></h3>
+<p>在引入 Spring Security 之后，<strong>会由于 Spring Security 自动对预检请求进行鉴权</strong>，而导致每次预检请求都会得到一个 401 的状态码，表示请求未被授权。此时需要增加一点配置才能让 CORS 正常工作：</p>
+<blockquote>
+<p>注：在引入 Spring Gateway 中，CORS 可以通过 Spring Gateway 解决，此时不再会出现预检请求被 Spring Security 拦截的情况
+，因此无需在授权模块的 Spring Security 中针对 CORS 作额外配置</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code><span class="nd">@Configuration</span><span class="w"></span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">SecurityConfig</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">WebSecurityConfigurerAdapter</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nd">@Override</span><span class="w"></span>
+<span class="w">    </span><span class="kd">protected</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">configure</span><span class="p">(</span><span class="n">HttpSecurity</span><span class="w"> </span><span class="n">http</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">Exception</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="n">http</span><span class="p">.</span><span class="na">cors</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<p>在 <code>cors()</code> 中，Spring Security 会保证通过 Spring Context 或根据 CorsConfiguration 配置创建使得 CorsFilter 存在并使其在身份验证相关的 Filter 之前执行，即引用 Spring Security 后，<code>cors()</code> 会默认在 DispatcherServlet 前进行一次 CORS 验证，而实现 WebMvcConfiguration 的方式进行的 CORS 配置最后会在 Spring 的 Interceptor 或 Handler 中生效，因此 <code>cors() + WebMvcConfiguration.addCorsMappings</code> 的方法是一种相对低效的方式，会导致跨域请求分别在 Filter 和 Interceptor 层各经历一次 CORS 验证</p>
+<h2 id="csrf">CSRF<a class="headerlink" href="#csrf" title="Permanent link">&para;</a></h2>
+<h3 id="csrf_1">CSRF的攻击手段<a class="headerlink" href="#csrf_1" title="Permanent link">&para;</a></h3>
+<p><img alt="image_2023-04-12-19-55-27" src="../img/image_2023-04-12-19-55-27.png" /></p>
+<h3 id="csrf_2">前后端分离项目对 CSRF 的抗性<a class="headerlink" href="#csrf_2" title="Permanent link">&para;</a></h3>
+<p>Spring Security 内置的 CSRF 防御手段是通过生成 CSRF Token 返回给用户达成的，而这本身就与jwt的认证手段一致</p>
+<p>前后端分离项目采用 jwt 进行认证，这会要求前端在登录后从 Response Headers 中取出 token 并将其存入 localStorage 中（只考虑前端代码的话，如 Vue 代码中就是前端应用的 <code>user.state.token</code> 中），然后在后续访问时通过前端代码将 token 封装进请求头再进行请求</p>
+<p>而在 CSRF 攻击中，用户被诱导发送请求时由于浏览器并未执行站点A的前端程序，因此这个诱导请求只会根据浏览器逻辑封装一个请求必要的信息及 cookie 进请求头，而不会将作为前端程序信息一部分的用户 token 封装到请求头，由此达成 CSRF 防御的效果</p>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="页脚" >
+      
+        
+        <a href="../../%E5%89%8D%E7%AB%AF/vue%E6%95%B4%E5%90%88%E5%AF%8C%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91%E5%99%A8tinymce/" class="md-footer__link md-footer__link--prev" aria-label="上一页: vue 整合 tinymce" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                上一页
+              </span>
+              vue 整合 tinymce
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../%E5%AE%A2%E6%88%B7%E7%AB%AF%E6%95%B0%E6%8D%AE%E7%BB%B4%E6%8C%81%E7%9A%84%E6%96%B9%E5%BC%8F/" class="md-footer__link md-footer__link--next" aria-label="下一页: 客户端数据维持的方式" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                下一页
+              </span>
+              客户端数据维持的方式
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\s\\-\uff0c\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version.title": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.5a2dcb6a.min.js"></script>
+      
+        <script src="../../js/cnzz-statistics.js"></script>
+      
+    
+    
+  </body>
+</html>
