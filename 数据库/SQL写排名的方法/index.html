@@ -8,19 +8,19 @@
       
       
       
-      <link rel="icon" href="../../../assets/images/favicon.png">
+      <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.10">
     
     
       
-        <title>Golang 的包策略 - Puuaru's notes</title>
+        <title>SQL 排名 - Puuaru's notes</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.975780f9.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.975780f9.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.2505c338.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.2505c338.min.css">
         
           
           
@@ -41,7 +41,7 @@
       
     
     
-    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -66,7 +66,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#golang" class="md-skip">
+        <a href="#sql" class="md-skip">
           跳转至
         </a>
       
@@ -80,7 +80,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="页眉">
-    <a href="../../.." title="Puuaru&#39;s notes" class="md-header__button md-logo" aria-label="Puuaru's notes" data-md-component="logo">
+    <a href="../.." title="Puuaru&#39;s notes" class="md-header__button md-logo" aria-label="Puuaru's notes" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -99,7 +99,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Golang 的包策略
+              SQL 排名
             
           </span>
         </div>
@@ -166,7 +166,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="导航栏" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../.." title="Puuaru&#39;s notes" class="md-nav__button md-logo" aria-label="Puuaru's notes" data-md-component="logo">
+    <a href="../.." title="Puuaru&#39;s notes" class="md-nav__button md-logo" aria-label="Puuaru's notes" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -185,7 +185,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../.." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         Puuaru's note repository
       </a>
     </li>
@@ -226,7 +226,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../linux/manjaro%E7%9A%84%E6%A1%8C%E9%9D%A2%E5%90%AF%E5%8A%A8%E5%A4%B1%E8%B4%A5%E9%97%AE%E9%A2%98/" class="md-nav__link">
+      <a href="../../linux/manjaro%E7%9A%84%E6%A1%8C%E9%9D%A2%E5%90%AF%E5%8A%A8%E5%A4%B1%E8%B4%A5%E9%97%AE%E9%A2%98/" class="md-nav__link">
         manjaro的桌面启动问题
       </a>
     </li>
@@ -240,7 +240,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../linux/%E4%BD%BF%E7%94%A8rofi%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%AE%9A%E4%B9%89%E8%8F%9C%E5%8D%95/" class="md-nav__link">
+      <a href="../../linux/%E4%BD%BF%E7%94%A8rofi%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%AE%9A%E4%B9%89%E8%8F%9C%E5%8D%95/" class="md-nav__link">
         使用 rofi 实现自定义菜单
       </a>
     </li>
@@ -306,7 +306,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../linux/%E5%AE%B9%E5%99%A8/Docker/file-descriptor-table/" class="md-nav__link">
+      <a href="../../linux/%E5%AE%B9%E5%99%A8/Docker/file-descriptor-table/" class="md-nav__link">
         java 容器启动报错
       </a>
     </li>
@@ -368,7 +368,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E5%89%8D%E7%AB%AF/vue%E6%95%B4%E5%90%88%E5%AF%8C%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91%E5%99%A8tinymce/" class="md-nav__link">
+      <a href="../../%E5%89%8D%E7%AB%AF/vue%E6%95%B4%E5%90%88%E5%AF%8C%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91%E5%99%A8tinymce/" class="md-nav__link">
         vue 整合 tinymce
       </a>
     </li>
@@ -416,7 +416,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E5%90%8E%E7%AB%AF/SpringSecurity/" class="md-nav__link">
+      <a href="../../%E5%90%8E%E7%AB%AF/SpringSecurity/" class="md-nav__link">
         Spring Security Note
       </a>
     </li>
@@ -430,7 +430,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E5%90%8E%E7%AB%AF/%E5%AE%A2%E6%88%B7%E7%AB%AF%E6%95%B0%E6%8D%AE%E7%BB%B4%E6%8C%81%E7%9A%84%E6%96%B9%E5%BC%8F/" class="md-nav__link">
+      <a href="../../%E5%90%8E%E7%AB%AF/%E5%AE%A2%E6%88%B7%E7%AB%AF%E6%95%B0%E6%8D%AE%E7%BB%B4%E6%8C%81%E7%9A%84%E6%96%B9%E5%BC%8F/" class="md-nav__link">
         客户端数据维持的方式
       </a>
     </li>
@@ -444,7 +444,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E5%90%8E%E7%AB%AF/%E7%BB%9F%E4%B8%80%E8%BF%94%E5%9B%9E/" class="md-nav__link">
+      <a href="../../%E5%90%8E%E7%AB%AF/%E7%BB%9F%E4%B8%80%E8%BF%94%E5%9B%9E/" class="md-nav__link">
         后端统一接口返回
       </a>
     </li>
@@ -458,9 +458,107 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E5%90%8E%E7%AB%AF/%E9%9B%AA%E8%8A%B1%E7%AE%97%E6%B3%95%E7%9A%84%E7%B2%BE%E5%BA%A6%E9%97%AE%E9%A2%98/" class="md-nav__link">
+      <a href="../../%E5%90%8E%E7%AB%AF/%E9%9B%AA%E8%8A%B1%E7%AE%97%E6%B3%95%E7%9A%84%E7%B2%BE%E5%BA%A6%E9%97%AE%E9%A2%98/" class="md-nav__link">
         雪花算法的精度问题
       </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          数据库
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="数据库" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          数据库
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          SQL 排名
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        SQL 排名
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#limit" class="md-nav__link">
+    通过 limit 语句完成排名
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#count" class="md-nav__link">
+    通过 count + 子查询完成排名
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -483,57 +581,7 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
-      
-      
-      
-      
-        <label class="md-nav__link" for="__nav_5">
-          数据库
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" aria-label="数据库" data-md-level="1">
-        <label class="md-nav__title" for="__nav_5">
-          <span class="md-nav__icon md-icon"></span>
-          数据库
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../%E6%95%B0%E6%8D%AE%E5%BA%93/SQL%E5%86%99%E6%8E%92%E5%90%8D%E7%9A%84%E6%96%B9%E6%B3%95/" class="md-nav__link">
-        SQL 排名
-      </a>
-    </li>
-  
-
-            
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-    
-  
-  
-    
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
       
       
       
@@ -554,14 +602,12 @@
               
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_1" type="checkbox" id="__nav_6_1" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_1" type="checkbox" id="__nav_6_1" >
       
       
       
@@ -582,52 +628,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Golang 的包策略
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/go/Golang%E7%9A%84%E5%8C%85%E7%AD%96%E7%95%A5/" class="md-nav__link">
         Golang 的包策略
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目录">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    程序的入口
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -672,7 +677,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../java/HashMap%E9%81%8D%E5%8E%86/" class="md-nav__link">
+      <a href="../../%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/java/HashMap%E9%81%8D%E5%8E%86/" class="md-nav__link">
         HashMap 的遍历方法
       </a>
     </li>
@@ -686,7 +691,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../java/%E5%88%97%E8%A1%A8%E6%8E%92%E5%BA%8F/" class="md-nav__link">
+      <a href="../../%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/java/%E5%88%97%E8%A1%A8%E6%8E%92%E5%BA%8F/" class="md-nav__link">
         列表排序方式
       </a>
     </li>
@@ -700,7 +705,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../java/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E5%AE%9E%E7%8E%B0/" class="md-nav__link">
+      <a href="../../%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/java/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E5%AE%9E%E7%8E%B0/" class="md-nav__link">
         字符串的实现
       </a>
     </li>
@@ -773,7 +778,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../typescript/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/any%26unknown%26never/" class="md-nav__link">
+      <a href="../../%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/typescript/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/any%26unknown%26never/" class="md-nav__link">
         any 和 unknown 和 never
       </a>
     </li>
@@ -787,7 +792,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../typescript/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/enum/" class="md-nav__link">
+      <a href="../../%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/typescript/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/enum/" class="md-nav__link">
         enum
       </a>
     </li>
@@ -801,7 +806,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../typescript/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/ts%E7%9A%84%E8%B5%8B%E5%80%BC%E7%B1%BB%E5%9E%8B%E5%85%BC%E5%AE%B9/" class="md-nav__link">
+      <a href="../../%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/typescript/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/ts%E7%9A%84%E8%B5%8B%E5%80%BC%E7%B1%BB%E5%9E%8B%E5%85%BC%E5%AE%B9/" class="md-nav__link">
         ts 的赋值类型兼容
       </a>
     </li>
@@ -815,7 +820,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../typescript/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/type%26interface/" class="md-nav__link">
+      <a href="../../%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/typescript/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/type%26interface/" class="md-nav__link">
         type & interface 区别
       </a>
     </li>
@@ -829,7 +834,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../typescript/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8BDatatype/" class="md-nav__link">
+      <a href="../../%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/typescript/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8BDatatype/" class="md-nav__link">
         TS 中的数据类型(Datatype)
       </a>
     </li>
@@ -917,7 +922,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E8%A3%85%E6%9C%BA/%E7%B3%BB%E7%BB%9F/%E5%88%B6%E4%BD%9C%E5%8F%AF%E5%90%AF%E5%8A%A8U%E7%9B%98/" class="md-nav__link">
+      <a href="../../%E8%A3%85%E6%9C%BA/%E7%B3%BB%E7%BB%9F/%E5%88%B6%E4%BD%9C%E5%8F%AF%E5%90%AF%E5%8A%A8U%E7%9B%98/" class="md-nav__link">
         制作可启动U盘
       </a>
     </li>
@@ -957,7 +962,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E8%A3%85%E6%9C%BA/%E7%B3%BB%E7%BB%9F/Linux/KVM/" class="md-nav__link">
+      <a href="../../%E8%A3%85%E6%9C%BA/%E7%B3%BB%E7%BB%9F/Linux/KVM/" class="md-nav__link">
         Linux 下使用 KVM 的笔记
       </a>
     </li>
@@ -1012,8 +1017,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    程序的入口
+  <a href="#limit" class="md-nav__link">
+    通过 limit 语句完成排名
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#count" class="md-nav__link">
+    通过 count + 子查询完成排名
   </a>
   
 </li>
@@ -1033,22 +1045,35 @@
                   
 
 
-<h1 id="golang">Golang 的包策略<a class="headerlink" href="#golang" title="Permanent link">&para;</a></h1>
-<h2 id="_1">程序的入口<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<p>每门语言学习的时候第一件事一般都是编写 <code>Hello World</code> 程序</p>
-<p>Golang 也不例外，但是 Golang 需要注意的是要留意其包策略</p>
-<p>以下代码在执行时会报错 “package command-line-arguments is not a main package”</p>
-<div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nx">golearn</span><span class="w"></span>
-
-<span class="kn">import</span><span class="w"> </span><span class="s">&quot;fmt&quot;</span><span class="w"></span>
-
-<span class="kd">func</span><span class="w"> </span><span class="nx">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">  </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;Hello world&quot;</span><span class="p">)</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<h1 id="sql">SQL 排名<a class="headerlink" href="#sql" title="Permanent link">&para;</a></h1>
+<h2 id="limit">通过 limit 语句完成排名<a class="headerlink" href="#limit" title="Permanent link">&para;</a></h2>
+<p>可以通过 order by 子句 + limit 来完成排名，但是这样的排名并不准确：</p>
+<ol>
+<li>要求只要对数值排名或排名不算并排，比如 “搜索前三的薪资” 而不是 “搜索前三薪资的员工”，
+后者可能出现相同薪资导致并列者被挤占</li>
+<li>无法分组，比如 “搜索各部门前三的薪资员工”，因只能显示三条数据而不能进行分组操作</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="k">select</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">salary</span><span class="w"></span>
+<span class="k">from</span><span class="w"> </span><span class="n">Employee</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">e</span><span class="w"></span>
+<span class="k">order</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">salary</span><span class="w"> </span><span class="k">desc</span><span class="w"></span>
+<span class="k">limit</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="w"></span>
 </code></pre></div>
-<p>其原因在于，Golang 要求程序入口必须是 main 包下的 main() 函数，
-因此此时可以考虑在该文件夹下创建一个 main 包，并在其中编写包含main()函数的 main.go</p>
-<p><img alt="image_2023-04-03-10-39-16" src="../img/image_2023-04-03-10-39-16.png" /></p>
+<h2 id="count">通过 count + 子查询完成排名<a class="headerlink" href="#count" title="Permanent link">&para;</a></h2>
+<p>通过 count 函数统计遍历时比当前记录大/小的其他记录个数，从而控制搜索排名</p>
+<div class="highlight"><pre><span></span><code><span class="k">select</span><span class="w"> </span><span class="n">d</span><span class="p">.</span><span class="n">name</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="s1">&#39;department&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">name</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="s1">&#39;employee&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">salary</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="s1">&#39;salary&#39;</span><span class="w"></span>
+<span class="k">from</span><span class="w"> </span><span class="n">Employee</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">e</span><span class="w"></span>
+<span class="k">join</span><span class="w"> </span><span class="n">Department</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="k">on</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">departmentId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">d</span><span class="p">.</span><span class="n">id</span><span class="w"></span>
+<span class="k">where</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="p">(</span><span class="w"></span>
+<span class="w">    </span><span class="k">select</span><span class="w"> </span><span class="k">count</span><span class="p">(</span><span class="k">distinct</span><span class="w"> </span><span class="n">et</span><span class="p">.</span><span class="n">salary</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="k">from</span><span class="w"> </span><span class="n">Employee</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">et</span><span class="w"></span>
+<span class="w">    </span><span class="k">where</span><span class="w"> </span><span class="n">et</span><span class="p">.</span><span class="n">salary</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">salary</span><span class="w"></span>
+<span class="w">        </span><span class="k">and</span><span class="w"> </span><span class="n">et</span><span class="p">.</span><span class="n">departmentId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">departmentId</span><span class="w"></span>
+<span class="p">)</span><span class="w"></span>
+</code></pre></div>
+<p>上面的代码记当前记录的薪资为 <code>e.salary</code>，子查询统计比 <code>e.salary</code> 大的数据个数，
+条件语句要求查找出来的记录 “在整个表中比它大的数据个数小于3个”，由此完成排名，
+若要排序还可以再加上 order by 子句</p>
+<p>上面的代码虽然冗长，但是还可以搭配连接完成分组排名</p>
 
 
 
@@ -1069,7 +1094,7 @@
     <nav class="md-footer__inner md-grid" aria-label="页脚" >
       
         
-        <a href="../../../%E6%95%B0%E6%8D%AE%E5%BA%93/SQL%E5%86%99%E6%8E%92%E5%90%8D%E7%9A%84%E6%96%B9%E6%B3%95/" class="md-footer__link md-footer__link--prev" aria-label="上一页: SQL 排名" rel="prev">
+        <a href="../../%E5%90%8E%E7%AB%AF/%E9%9B%AA%E8%8A%B1%E7%AE%97%E6%B3%95%E7%9A%84%E7%B2%BE%E5%BA%A6%E9%97%AE%E9%A2%98/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 雪花算法的精度问题" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -1078,20 +1103,20 @@
               <span class="md-footer__direction">
                 上一页
               </span>
-              SQL 排名
+              雪花算法的精度问题
             </div>
           </div>
         </a>
       
       
         
-        <a href="../../java/HashMap%E9%81%8D%E5%8E%86/" class="md-footer__link md-footer__link--next" aria-label="下一页: HashMap 的遍历方法" rel="next">
+        <a href="../../%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/go/Golang%E7%9A%84%E5%8C%85%E7%AD%96%E7%95%A5/" class="md-footer__link md-footer__link--next" aria-label="下一页: Golang 的包策略" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 下一页
               </span>
-              HashMap 的遍历方法
+              Golang 的包策略
             </div>
           </div>
           <div class="md-footer__button md-icon">
@@ -1122,12 +1147,12 @@
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\s\\-\uff0c\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version.title": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\s\\-\uff0c\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version.title": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.5a2dcb6a.min.js"></script>
+      <script src="../../assets/javascripts/bundle.5a2dcb6a.min.js"></script>
       
-        <script src="../../../js/cnzz-statistics.js"></script>
+        <script src="../../js/cnzz-statistics.js"></script>
       
     
     
