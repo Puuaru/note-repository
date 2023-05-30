@@ -89,3 +89,11 @@ console.log(f);
 
 由于 typescript 的数据类型本质上是一种值的集合，
 所以上述代码可以直接改成以下形式:
+
+```typescript
+type Fruit = 'apple' | 'banana' | 'pineapple' | 'watermelon';
+
+let f: Fruit = 'apple';
+f = 'watermelon';
+console.log(f);
+```
