@@ -13,7 +13,7 @@
     
     
       
-        <title>SQL 排名 - Puuaru's notes</title>
+        <title>SQL 的日期比较 - Puuaru's notes</title>
       
     
     
@@ -99,7 +99,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              SQL 排名
+              SQL 的日期比较
             
           </span>
         </div>
@@ -506,6 +506,20 @@
               
   
   
+  
+    <li class="md-nav__item">
+      <a href="../SQL%E5%86%99%E6%8E%92%E5%90%8D%E7%9A%84%E6%96%B9%E6%B3%95/" class="md-nav__link">
+        SQL 排名
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
     
   
   
@@ -518,12 +532,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          SQL 排名
+          SQL 的日期比较
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        SQL 排名
+        SQL 的日期比较
       </a>
       
         
@@ -542,16 +556,29 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#limit" class="md-nav__link">
-    通过 limit 语句完成排名
+  <a href="#_1" class="md-nav__link">
+    使用函数计算
+  </a>
+  
+    <nav class="md-nav" aria-label="使用函数计算">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#datediff" class="md-nav__link">
+    DATEDIFF
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#count" class="md-nav__link">
-    通过 count + 子查询完成排名
+        
+          <li class="md-nav__item">
+  <a href="#timestampdiff" class="md-nav__link">
+    TIMESTAMPDIFF
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -559,20 +586,6 @@
   
 </nav>
       
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../%E6%97%A5%E6%9C%9F%E6%AF%94%E8%BE%83/" class="md-nav__link">
-        SQL 的日期比较
-      </a>
     </li>
   
 
@@ -1031,16 +1044,29 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#limit" class="md-nav__link">
-    通过 limit 语句完成排名
+  <a href="#_1" class="md-nav__link">
+    使用函数计算
+  </a>
+  
+    <nav class="md-nav" aria-label="使用函数计算">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#datediff" class="md-nav__link">
+    DATEDIFF
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#count" class="md-nav__link">
-    通过 count + 子查询完成排名
+        
+          <li class="md-nav__item">
+  <a href="#timestampdiff" class="md-nav__link">
+    TIMESTAMPDIFF
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1059,35 +1085,22 @@
                   
 
 
-<h1 id="sql">SQL 排名<a class="headerlink" href="#sql" title="Permanent link">&para;</a></h1>
-<h2 id="limit">通过 limit 语句完成排名<a class="headerlink" href="#limit" title="Permanent link">&para;</a></h2>
-<p>可以通过 order by 子句 + limit 来完成排名，但是这样的排名并不准确：</p>
-<ol>
-<li>要求只要对数值排名或排名不算并排，比如 “搜索前三的薪资” 而不是 “搜索前三薪资的员工”，
-后者可能出现相同薪资导致并列者被挤占</li>
-<li>无法分组，比如 “搜索各部门前三的薪资员工”，因只能显示三条数据而不能进行分组操作</li>
-</ol>
-<div class="highlight"><pre><span></span><code><span class="k">select</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">salary</span><span class="w"></span>
-<span class="k">from</span><span class="w"> </span><span class="n">Employee</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">e</span><span class="w"></span>
-<span class="k">order</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">salary</span><span class="w"> </span><span class="k">desc</span><span class="w"></span>
-<span class="k">limit</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="w"></span>
+<h1 id="sql">SQL 的日期比较<a class="headerlink" href="#sql" title="Permanent link">&para;</a></h1>
+<p>SQL 中无法直接使用减运算比较时间，这会导致时间/日期先转换成整数再相减，
+比如 <code>2019-11-01</code> 和 <code>2019-10-31</code> 的计算结果是 70</p>
+<h2 id="_1">使用函数计算<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>使用 SQL 计算时间数据时一般会使用两个函数</p>
+<h3 id="datediff">DATEDIFF<a class="headerlink" href="#datediff" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">DATEDIFF</span><span class="p">(</span><span class="s1">&#39;2019-11-01&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;2019-10-31&#39;</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">diff</span><span class="p">;</span><span class="w"></span>
 </code></pre></div>
-<h2 id="count">通过 count + 子查询完成排名<a class="headerlink" href="#count" title="Permanent link">&para;</a></h2>
-<p>通过 count 函数统计遍历时比当前记录大/小的其他记录个数，从而控制搜索排名</p>
-<div class="highlight"><pre><span></span><code><span class="k">select</span><span class="w"> </span><span class="n">d</span><span class="p">.</span><span class="n">name</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="s1">&#39;department&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">name</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="s1">&#39;employee&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">salary</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="s1">&#39;salary&#39;</span><span class="w"></span>
-<span class="k">from</span><span class="w"> </span><span class="n">Employee</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">e</span><span class="w"></span>
-<span class="k">join</span><span class="w"> </span><span class="n">Department</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="k">on</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">departmentId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">d</span><span class="p">.</span><span class="n">id</span><span class="w"></span>
-<span class="k">where</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="p">(</span><span class="w"></span>
-<span class="w">    </span><span class="k">select</span><span class="w"> </span><span class="k">count</span><span class="p">(</span><span class="k">distinct</span><span class="w"> </span><span class="n">et</span><span class="p">.</span><span class="n">salary</span><span class="p">)</span><span class="w"></span>
-<span class="w">    </span><span class="k">from</span><span class="w"> </span><span class="n">Employee</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">et</span><span class="w"></span>
-<span class="w">    </span><span class="k">where</span><span class="w"> </span><span class="n">et</span><span class="p">.</span><span class="n">salary</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">salary</span><span class="w"></span>
-<span class="w">        </span><span class="k">and</span><span class="w"> </span><span class="n">et</span><span class="p">.</span><span class="n">departmentId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">departmentId</span><span class="w"></span>
-<span class="p">)</span><span class="w"></span>
+<p>DATEDIFF() 函数接受两个参数，前者为被减数，后者为减数，因此上面的 SQL 的运行结果是：
+<code>{"headers": ["diff"], "values": [[1]]}</code></p>
+<h3 id="timestampdiff">TIMESTAMPDIFF<a class="headerlink" href="#timestampdiff" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">TIMESTAMPDIFF</span><span class="p">(</span><span class="n">unit</span><span class="p">,</span><span class="w"> </span><span class="n">start_datetime</span><span class="p">,</span><span class="w"> </span><span class="n">end_datetime</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">diff</span><span class="p">;</span><span class="w"></span>
 </code></pre></div>
-<p>上面的代码记当前记录的薪资为 <code>e.salary</code>，子查询统计比 <code>e.salary</code> 大的数据个数，
-条件语句要求查找出来的记录 “在整个表中比它大的数据个数小于3个”，由此完成排名，
-若要排序还可以再加上 order by 子句</p>
-<p>上面的代码虽然冗长，但是还可以搭配连接完成分组排名</p>
+<p>TIMESTAMPDIFF() 函数接受三个参数，unit 为时间单位：</p>
+<p>SECOND、MINUTE、HOUR、DAY、MONTH、YEAR</p>
+<p>需要注意的是，TIMESTAMPDIFF() 的计算方向和 DATEDIFF() 是相反的，即第二个参数为减数，第三个参数为被减数</p>
 
 
 
@@ -1108,7 +1121,7 @@
     <nav class="md-footer__inner md-grid" aria-label="页脚" >
       
         
-        <a href="../../%E5%90%8E%E7%AB%AF/%E9%9B%AA%E8%8A%B1%E7%AE%97%E6%B3%95%E7%9A%84%E7%B2%BE%E5%BA%A6%E9%97%AE%E9%A2%98/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 雪花算法的精度问题" rel="prev">
+        <a href="../SQL%E5%86%99%E6%8E%92%E5%90%8D%E7%9A%84%E6%96%B9%E6%B3%95/" class="md-footer__link md-footer__link--prev" aria-label="上一页: SQL 排名" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -1117,20 +1130,20 @@
               <span class="md-footer__direction">
                 上一页
               </span>
-              雪花算法的精度问题
+              SQL 排名
             </div>
           </div>
         </a>
       
       
         
-        <a href="../%E6%97%A5%E6%9C%9F%E6%AF%94%E8%BE%83/" class="md-footer__link md-footer__link--next" aria-label="下一页: SQL 的日期比较" rel="next">
+        <a href="../../%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/go/Golang%E7%9A%84%E5%8C%85%E7%AD%96%E7%95%A5/" class="md-footer__link md-footer__link--next" aria-label="下一页: Golang 的包策略" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 下一页
               </span>
-              SQL 的日期比较
+              Golang 的包策略
             </div>
           </div>
           <div class="md-footer__button md-icon">
